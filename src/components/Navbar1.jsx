@@ -7,26 +7,24 @@ import { HashLink as Link } from "react-router-hash-link";
 const menuItems = [
   {
     label: "Medical",
-    href: "",
+    href: "/medical-services",
     icon: <MdMedicalServices className="inline mr-2 text-yellow" />,
     submenu: [
-      { label: "Family Practice", href: "", desc: "Personalized care for all ages" },
-      { label: "Walk-in Clinic", href: "", desc: "No appointment? No problem." },
+      { label: "Family Practice", href: "/medical-services", desc: "Personalized care for all ages" },
+      { label: "Walk-in Clinic", href: "/medical-services", desc: "No appointment? No problem." },
     ],
   },
   {
     label: "Pharmacy",
-    href: "",
+    href: "/pharmacy-services",
     icon: <MdLocalPharmacy className="inline mr-2 text-yellow" />,
     submenu: [
-      { label: "Vaccinations & Immunizations", href: "", desc: "Flu shots, travel vaccines & more" },
-      { label: "Consultation", href: "", desc: "Private consultations & medication reviews" },
-      { label: "Prescribing Pharmacist", href: "", desc: "Walk-in assessment & prescribing" },
-      { label: "Compliance Packaging", href: "", desc: "Blister packs to simplify medication use" },
+      { label: "Vaccinations & Immunizations", href: "/pharmacy-services", desc: "Flu shots, travel vaccines & more" },
+      { label: "Consultation", href: "/pharmacy-services", desc: "Private consultations & medication reviews" },
+      { label: "Prescribing Pharmacist", href: "/pharmacy-services", desc: "Walk-in assessment & prescribing" },
+      { label: "Compliance Packaging", href: "/pharmacy-services", desc: "Blister packs to simplify medication use" },
     ],
   },
-  { label: "About Us", href: "" },
-  { label: "Contact Us", href: "" },
 ];
 
 export default function Navbar1() {
