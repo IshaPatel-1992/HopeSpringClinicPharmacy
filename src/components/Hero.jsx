@@ -8,42 +8,58 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-teal-dark via-teal to-dark text-white overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 bg-gradient-to-br from-teal-dark via-teal to-dark text-white overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-yellow/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 -left-32 w-96 h-96 bg-green-light/20 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-        
         {/* LEFT: Content */}
-        <div>
-          {/* <span className="inline-block mb-4 px-4 py-1 rounded-full bg-yellow text-teal-dark font-bold shadow">
-            Accepting New Patients
-          </span> */}
-
+        <div className="space-y-6">
           {/* Coming Soon Banner */}
-          <p className="mt-4 inline-block px-4 py-2 bg-teal-light/20 text-yellow-light font-semibold rounded-full animate-pulse shadow-md">
+          <p
+            className="mt-4 inline-block px-4 py-2 bg-teal-light/20 text-yellow-light font-semibold rounded-full animate-fadeSlideUp shadow-md font-space"
+            style={{ animationDelay: "0.1s" }}
+          >
             🌟 Coming Soon! 🌟
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-6 font-space">
+          {/* Hero Heading */}
+          <h3
+            className="text-3xl md:text-3xl font-extrabold leading-tight mt-6 mb-6 animate-fadeSlideUp"
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              animationDelay: "0.3s",
+            }}
+          >
             Complete Medical & Pharmacy Care
-            <span className="block text-yellow-light">
+            <span className="block text-yellow-light text-1xl md:text-1xl mt-2">
               — All in One Place —
             </span>
-          </h2>
+          </h3>
 
-          <p className="text-lg md:text-xl text-white/90 mb-6 max-w-xl font-raleway">
+          {/* Hero Paragraph */}
+          <p
+            className="text-lg md:text-xl text-white/90 max-w-xl tracking-wide animate-fadeSlideUp"
+            style={{
+              fontFamily: "'Raleway', sans-serif",
+              animationDelay: "0.5s",
+            }}
+          >
             Compassionate healthcare with experienced providers, modern
             facilities, and an on-site pharmacy for your convenience.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
+          {/* CTA Buttons */}
+          <div
+            className="flex flex-col sm:flex-row gap-4 animate-fadeSlideUp"
+            style={{ animationDelay: "0.7s" }}
+          >
             <Link
               to="/medical-services"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-yellow hover:bg-yellow-dark text-teal-dark font-semibold rounded-full shadow-lg transition"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-yellow hover:bg-yellow-dark text-teal-dark font-semibold font-space rounded-full shadow-lg transition transform hover:scale-105 hover:shadow-[0_0_15px_rgba(236,201,75,0.7)] animate-subtleBounce"
+              style={{ animationDelay: "0.9s" }}
             >
               <MdMedicalServices className="text-xl" />
               Medical Services
@@ -51,14 +67,13 @@ export default function HeroSection() {
 
             <Link
               to="/pharmacy-services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-yellow text-yellow hover:bg-yellow hover:text-teal-dark font-semibold rounded-full transition"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-yellow text-yellow hover:bg-yellow hover:text-teal-dark font-semibold font-space rounded-full transition transform hover:scale-105 hover:shadow-[0_0_15px_rgba(236,201,75,0.7)] animate-subtleBounce"
+              style={{ animationDelay: "1.1s" }}
             >
               <GiMedicines className="text-xl" />
               Pharmacy Services
             </Link>
           </div>
-
-          
         </div>
 
         {/* RIGHT: Feature cards */}
@@ -91,10 +106,26 @@ export default function HeroSection() {
 
 function FeatureCard({ icon, title, text }) {
   return (
-    <div className="bg-dark-soft/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:bg-dark-muted transition">
-      <div className="text-yellow text-3xl mb-4">{icon}</div>
-      <h3 className="text-lg font-semibold mb-2 font-space">{title}</h3>
-      <p className="text-sm text-white/80 font-raleway">{text}</p>
+    <div className="group bg-dark-soft/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg 
+                    hover:shadow-2xl hover:scale-105 hover:bg-dark-soft/90 
+                    transition duration-300 ease-out cursor-pointer">
+      <div className="text-yellow text-3xl mb-4 transform transition duration-500 
+                      group-hover:text-yellow-light group-hover:rotate-12">
+        {icon}
+      </div>
+
+      <h3
+        className="text-lg font-semibold mb-2"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
+        {title}
+      </h3>
+      <p
+        className="text-sm text-white/80"
+        style={{ fontFamily: "'Raleway', sans-serif" }}
+      >
+        {text}
+      </p>
     </div>
   );
 }
