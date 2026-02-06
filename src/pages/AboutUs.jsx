@@ -1,86 +1,127 @@
-import React, { useEffect } from "react";
-import {
-  FaStethoscope,
-  FaBriefcaseMedical,
-  FaCapsules,
-} from "react-icons/fa6";
+import React, { useRef } from "react";
+import { FaStethoscope, FaCapsules, FaUsers } from "react-icons/fa6";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import CertificateSection from "../components/CertificateSection";
-import OurTeam from "../components/OurTeam";
+const team = [
+  {
+    name: "Dr. Jane Doe",
+    credentials: "MD, CCFP",
+    role: "Family Physician",
+    photo: "https://via.placeholder.com/150",
+    bio: "Providing patient-centered care with over 10 years of experience in family medicine.",
+  },
+  {
+    name: "John Smith",
+    role: "Pharmacy Manager",
+    photo: "https://via.placeholder.com/150",
+    bio: "Ensuring safe and effective medication management for our patients.",
+    licenses: [
+      "Practice Permit No. ####",
+      "Pharmacy License ####",
+    ],
+  },
+];
 
 export default function AboutUs() {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
+  const teamRef = useRef(null);
+
+  const handleShowTeam = () => {
+    if (teamRef.current) {
+      teamRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div id="about" className="scroll-mt-28">
-      {/* About Section */}
-      <section
-        id="aboutuspg"
-        className="py-20 px-6 bg-white text-gray-700 max-w-4xl mx-auto scroll-mt-28"
-        data-aos="fade-up"
-      >
-        <div className="inline-block mb-6 relative">
-          <h2 className="text-4xl font-extrabold text-teal-800 relative z-10">
-            About Us
-          </h2>
-          <div className="absolute w-16 h-1 bg-teal-600 bottom-0 left-0 rounded"></div>
-        </div>
+    <div id="about" className="scroll-mt-28 pt-24 bg-gradient-to-br from-green-100 to-green-50 text-gray-900 overflow-hidden">
 
-        <div className="space-y-6 text-base md:text-lg leading-relaxed">
-          { /* <p className="flex items-start gap-3">
-            <FaStethoscope className="text-xl text-teal-600 mt-1" />
-            At Greenwich Medical Clinic, your health comes first. We provide
-            comprehensive medical care — from routine check-ups to chronic
-            condition management — with a focus on compassion and personalized
-            attention.
-          </p> */ } 
-          <p className="flex items-start gap-3">
-  <FaStethoscope className="text-xl text-teal-600 mt-1" />
-  <span>
-    At Greenwich Medical Clinic, your health comes first. We provide comprehensive medical care — from routine check-ups to chronic condition management — with a focus on compassion and personalized attention. <br />
-    As part of the <span className="font-semibold text-teal-700">Calgary Foothills Primary Care Network (PCN)</span>, we collaborate with a team of health professionals including doctors, nurses, pharmacists, dietitians, and social workers to provide coordinated, comprehensive care.
-    <ul className="list-disc list-inside mt-2 text-gray-700">
-      <li>Access to mental health counselling and chronic disease support</li>
-      <li>Health workshops and wellness programs</li>
-      <li>Team-based, patient-centred primary care services</li>
-    </ul>
-  </span>
-</p>
-
-          <p className="flex items-start gap-3">
-            <FaBriefcaseMedical className="text-xl text-teal-600 mt-1" />
-            Our experienced healthcare professionals are committed to supporting
-            you at every stage of your health journey.
-          </p>
-          <p className="flex items-start gap-3">
-            <FaCapsules className="text-xl text-teal-600 mt-1" />
-            To make your experience seamless, our in-house pharmacy offers
-            prescription services and convenient delivery — all under one roof.
-          </p>
-          
-        </div>
-      </section>
-
-      {/* Certificate Section */}
-      <CertificateSection />
-
-      {/* Team Introduction Section */}
-      <section className="bg-white py-12 px-6 text-center" data-aos="fade-up">
-        <h3 className="text-3xl font-bold text-teal-800 mb-4">
-          Meet Our Team
-        </h3>
-        <p className="max-w-2xl mx-auto text-gray-600 text-base md:text-lg">
-          Get to know the friendly and professional team behind Greenwich
-          Medical Clinic & Pharmacy — your partners in better health.
+      {/* HERO */}
+      <section className="py-24 px-6 max-w-5xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-green-700 font-space mb-4">
+          About HopeSpring
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 font-raleway max-w-3xl mx-auto mb-6">
+          Compassionate, coordinated healthcare — supporting you and your family at every stage of life.
         </p>
+        <button
+          onClick={handleShowTeam}
+          className="px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700 transition shadow-md"
+        >
+          Meet Our Team
+        </button>
       </section>
 
-      {/* OurTeam Component */}
-      <OurTeam />
+      {/* CORE VALUES */}
+      <section className="px-6 pb-28">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="group bg-white/50 backdrop-blur-md rounded-2xl p-7 text-center hover:scale-105 transition duration-300">
+            <FaStethoscope className="text-5xl text-green-500 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-3 font-space">Patient-Centered Care</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              Comprehensive care with compassion and personal attention.
+            </p>
+          </div>
+          <div className="group bg-white/50 backdrop-blur-md rounded-2xl p-7 text-center hover:scale-105 transition duration-300">
+            <FaUsers className="text-5xl text-green-500 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-3 font-space">Team-Based Approach</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              Coordinated care with doctors, nurses, pharmacists, and dietitians.
+            </p>
+          </div>
+          <div className="group bg-white/50 backdrop-blur-md rounded-2xl p-7 text-center hover:scale-105 transition duration-300">
+            <FaCapsules className="text-5xl text-green-500 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-3 font-space">Integrated Pharmacy</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              On-site pharmacy with prescription services, counseling, and delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM SECTION (Initially Hidden) */}
+      <section
+        ref={teamRef}
+        className="py-20 px-6 text-center transform transition-all duration-700 opacity-100"
+      >
+        <h2 className="text-3xl font-extrabold text-green-700 font-space mb-12">
+          Meet Our Team
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-10 max-w-6xl mx-auto">
+          {team.map((member, idx) => (
+            <div
+              key={idx}
+              className="w-64 bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+            >
+              {/* Profile Photo */}
+              <div className="w-full h-64 overflow-hidden rounded-t-2xl">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="p-6 text-left">
+                <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+                {member.credentials && (
+                  <p className="text-sm text-gray-500 mb-1">{member.credentials}</p>
+                )}
+                <p className="text-green-700 font-medium mb-2">{member.role}</p>
+                <p className="text-gray-600 text-sm mb-2">{member.bio}</p>
+
+                {/* Licenses */}
+                {member.licenses && (
+                  <ul className="text-xs text-gray-400 italic list-disc list-inside mt-2">
+                    {member.licenses.map((lic, i) => (
+                      <li key={i}>{lic}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

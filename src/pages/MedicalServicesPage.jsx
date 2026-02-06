@@ -29,24 +29,6 @@ const services = [
       "No appointment needed. Fast access to care for illnesses, infections, and minor concerns.",
   },
   {
-    title: "IUD & Contraceptive Implant",
-    icon: <FaVenus className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
-    description:
-      "Professional, confidential IUD and contraceptive implant insertion services.",
-  },
-  {
-    title: "Spanish-Speaking Physician",
-    icon: <FaUserMd className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
-    description:
-      "Appointments available with our Spanish-speaking doctor for accessible care.",
-  },
-  {
-    title: "Telemedicine",
-    icon: <FaStethoscope className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
-    description:
-      "Virtual consultations from the comfort of your home with trusted providers.",
-  },
-  {
     title: "Immunization",
     icon: <FaSyringe className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
     description:
@@ -115,97 +97,62 @@ export default function MedicalServicesPage() {
   }, []);
 
   return (
-    <div
-      id="medical"
-      className="scroll-mt-28 pt-24 bg-gradient-to-br from-teal-dark via-teal to-dark text-white overflow-hidden"
-    >
-      {/* SEO */}
-      <Helmet>
-        <title>Medical Services | HopeSpring Medical Clinic & Pharmacy</title>
-        <meta
-          name="description"
-          content="Family practice, walk-in clinic, women's health, immunizations, IUD insertion, chronic disease management, and uninsured services."
-        />
-        <link rel="canonical" href="" />
-      </Helmet>
+   <div id="medical" className="scroll-mt-28 pt-24 bg-green-50 text-gray-900 overflow-hidden">
 
-      {/* PAGE HEADER */}
-      <section className="py-24 px-6 max-w-5xl mx-auto text-center" data-aos="fade-up">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-yellow font-space mb-4">
-          Medical Services
-        </h1>
+  {/* PAGE HEADER */}
+  <section className="py-24 px-6 max-w-5xl mx-auto text-center" data-aos="fade-up">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-green-700 font-space mb-4">
+      Medical Services
+    </h1>
+    <p className="text-lg md:text-xl text-gray-700 font-raleway max-w-3xl mx-auto">
+      Comprehensive, patient-centered care — from walk-in visits to long-term family practice, all under one roof.
+    </p>
 
-        <p className="text-lg md:text-xl text-white/85 font-raleway max-w-3xl mx-auto">
-          Comprehensive, patient-centered care — from walk-in visits to long-term family practice, all under one roof.
-        </p>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-          {[
-            "Family Practice",
-            "Walk-In Clinic",
-            "Women’s Health",
-            "Immunizations",
-            "Chronic Care",
-            "Uninsured Services",
-          ].map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 rounded-full bg-dark-soft/70 border border-yellow/30 text-yellow"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* DIVIDER */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-yellow/30 to-transparent mb-16" />
-      </div>
-
-      {/* SERVICES GRID */}
-      <section className="pb-28 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map(({ title, description, icon }) => (
-            <div
-              key={title}
-              className="group bg-dark-soft/80 backdrop-blur-sm rounded-2xl shadow-lg
-                         p-7 text-center transition-all duration-300
-                         hover:scale-105 hover:bg-dark-muted"
-              data-aos="fade-up"
-            >
-              <div className="mb-5">{icon}</div>
-              <h3 className="text-xl font-semibold mb-2 font-space">{title}</h3>
-              <p className="text-white/80 text-sm leading-relaxed">{description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="py-20 text-center bg-dark-soft/60">
-        <h3 className="text-3xl font-extrabold text-yellow font-space mb-4">
-          Need Care Today?
-        </h3>
-        <p className="text-white/80 mb-6">
-          Walk in or book an appointment — our team is here to help.
-        </p>
-
-        <div className="flex justify-center gap-4 flex-wrap">
-          <a
-            href="/contact"
-            className="px-6 py-3 rounded-full bg-yellow text-teal-dark font-semibold hover:bg-yellow-dark transition"
-          >
-            Book Appointment
-          </a>
-          <a
-            href="/contact"
-            className="px-6 py-3 rounded-full border border-yellow text-yellow hover:bg-yellow hover:text-teal-dark transition"
-          >
-            Walk-In Info
-          </a>
-        </div>
-      </section>
+    <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+      {["Family Practice", "Walk-In Clinic", "Women’s Health", "Immunizations", "Chronic Care", "Uninsured Services"].map((item) => (
+        <span key={item} className="px-4 py-2 rounded-lg bg-green-100 border border-green-200 text-green-700 font-semibold">
+          {item}
+        </span>
+      ))}
     </div>
+  </section>
+
+  {/* SERVICES GRID */}
+  <section className="pb-28 px-6">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map(({ title, description, icon }, idx) => (
+        <div
+          key={title}
+          className="group bg-white/50 backdrop-blur-md rounded-2xl shadow-md p-7 text-center transition-all duration-300 hover:scale-105 hover:bg-white/60"
+          data-aos="fade-up"
+        >
+          <div className={`mb-5 text-4xl ${["text-green-500","text-yellow-500","text-blue-500","text-teal-500"][idx % 4]} transition-transform group-hover:rotate-12`}>
+            {icon}
+          </div>
+          <h3 className="text-xl font-semibold mb-2 font-space">{title}</h3>
+          <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* CTA SECTION */}
+  <section className="py-20 text-center">
+    <h3 className="text-3xl font-extrabold text-green-700 font-space mb-4">Need Care Today?</h3>
+    <p className="text-gray-700 mb-6">
+      Walk in or book an appointment — our team is here to help.
+    </p>
+
+    <div className="flex justify-center gap-4 flex-wrap">
+      <a href="/contact" className="px-6 py-3 rounded-lg bg-green-300 font-semibold hover:bg-green-400 transition shadow-md">
+        Book Appointment
+      </a>
+      <a href="/contact" className="px-6 py-3 rounded-lg bg-green-50 text-green-700 border border-green-200 font-semibold hover:bg-green-200 transition">
+        Walk-In Info
+      </a>
+    </div>
+  </section>
+</div>
+
   );
 }
