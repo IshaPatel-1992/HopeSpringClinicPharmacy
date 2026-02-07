@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaStethoscope, FaHeartbeat, FaUserMd } from "react-icons/fa";
-import { MdLocalPharmacy, MdMedicalServices } from "react-icons/md";
-import { GiMedicines } from "react-icons/gi";
+// import { MdLocalPharmacy } from "react-icons/md";
+import { MdMedicalServices } from "react-icons/md";
+import { FaNotesMedical } from "react-icons/fa";
+// import { GiMedicines } from "react-icons/gi";
 
 export default function HeroSection() {
   return (
@@ -19,11 +21,11 @@ export default function HeroSection() {
         <div className="space-y-6">
           {/* Coming Soon Banner */}
           <p
-  className="mt-4 inline-block px-6 py-4 bg-green-200/70 text-green-900 font-extrabold uppercase text-2xl tracking-wider rounded-full animate-fadeSlideUp shadow-lg font-space"
-  style={{ animationDelay: "0.1s" }}
->
-  🌟 Coming Soon! 🌟
-</p>
+            className="mt-4 inline-block px-6 py-4 bg-green-200/70 text-green-900 font-extrabold uppercase text-2xl tracking-wider rounded-full animate-fadeSlideUp shadow-lg font-space"
+            style={{ animationDelay: "0.1s" }}
+          >
+            🌟 Coming Soon! 🌟
+          </p>
 
           {/* Hero Heading */}
           <h3
@@ -33,9 +35,9 @@ export default function HeroSection() {
               animationDelay: "0.3s",
             }}
           >
-            Complete Medical & Pharmacy Care
+            Complete Medical Clinic Care
             <span className="block text-green-800 text-lg md:text-1xl mt-2 font-semibold">
-              — All in One Place —
+              — Compassionate care, close to home —
             </span>
           </h3>
 
@@ -47,8 +49,8 @@ export default function HeroSection() {
               animationDelay: "0.5s",
             }}
           >
-            Compassionate healthcare with experienced providers, modern
-            facilities, and an on-site pharmacy for your convenience.
+            Compassionate healthcare with experienced providers and modern
+            facilities — designed for your comfort and convenience.
           </p>
 
           {/* CTA Buttons */}
@@ -66,7 +68,7 @@ export default function HeroSection() {
               Medical Services
             </Link>
 
-            {/* Pharmacy Services Button */}
+            {/* Pharmacy Services Button (TEMPORARY OFF)
             <Link
               to="/pharmacy-services"
               className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-200 hover:bg-yellow-300 text-yellow-900 font-semibold rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 duration-300 ease-out animate-subtleBounce"
@@ -75,35 +77,49 @@ export default function HeroSection() {
               <GiMedicines className="text-xl" />
               Pharmacy Services
             </Link>
+            */}
           </div>
         </div>
 
         {/* RIGHT: Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-stretch md:place-items-stretch">
           <FeatureCard
             icon={<FaUserMd />}
             title="Experienced Providers"
             text="Patient-centred care from trusted medical professionals."
             color="green"
           />
+
+          {/* On-Site Pharmacy (TEMPORARY OFF)
           <FeatureCard
             icon={<MdLocalPharmacy />}
             title="On-Site Pharmacy"
             text="Fast prescriptions with expert medication guidance."
             color="yellow"
           />
+          */}
+
           <FeatureCard
             icon={<FaHeartbeat />}
             title="Continuity of Care"
             text="Coordinated services for better long-term outcomes."
             color="blue"
           />
+
           <FeatureCard
             icon={<FaStethoscope />}
             title="Modern Clinic"
             text="Welcoming environment with up-to-date technology."
             color="teal"
           />
+
+          <FeatureCard
+  icon={<FaNotesMedical />}
+  title="Walk-in Clinic"
+  text="No appointment needed for same-day care and urgent concerns."
+  color="green"
+/>
+
         </div>
       </div>
     </section>
@@ -119,16 +135,26 @@ function FeatureCard({ icon, title, text, color }) {
   };
 
   return (
-    <div className={`group bg-white/50 backdrop-blur-md p-6 rounded-2xl shadow-md 
-                    hover:shadow-lg hover:scale-105 hover:bg-white/60 transition duration-300 ease-out cursor-pointer`}>
-      <div className={`${colors[color]} text-3xl mb-4 transform transition duration-500 group-hover:rotate-12`}>
+    <div
+      className={`group bg-white/50 backdrop-blur-md p-6 rounded-2xl shadow-md 
+      hover:shadow-lg hover:scale-105 hover:bg-white/60 transition duration-300 ease-out cursor-pointer`}
+    >
+      <div
+        className={`${colors[color]} text-3xl mb-4 transform transition duration-500 group-hover:rotate-12`}
+      >
         {icon}
       </div>
 
-      <h3 className="text-lg font-semibold mb-2 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <h3
+        className="text-lg font-semibold mb-2 text-gray-900"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
         {title}
       </h3>
-      <p className="text-sm text-gray-700" style={{ fontFamily: "'Raleway', sans-serif" }}>
+      <p
+        className="text-sm text-gray-700"
+        style={{ fontFamily: "'Raleway', sans-serif" }}
+      >
         {text}
       </p>
     </div>

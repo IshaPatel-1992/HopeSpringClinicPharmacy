@@ -29,12 +29,6 @@ const services = [
       "No appointment needed. Fast access to care for illnesses, infections, and minor concerns.",
   },
   {
-    title: "Immunization",
-    icon: <FaSyringe className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
-    description:
-      "Routine childhood, adult, and travel vaccines to keep you protected.",
-  },
-  {
     title: "Pap Smear / Pap Test",
     icon: <FaFileMedical className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
     description:
@@ -59,10 +53,10 @@ const services = [
       "Personalized care through all stages of a woman’s life.",
   },
   {
-    title: "Pregnancy Testing",
+    title: "Pregnancy Testing & Prenatal Care",
     icon: <FaBaby className="text-5xl text-yellow group-hover:scale-110 transition-transform duration-300" />,
     description:
-      "Confidential, fast, and accurate pregnancy testing services.",
+      "Confidential pregnancy testing with early prenatal guidance, referrals, and ongoing care to support a healthy pregnancy.",
   },
   {
     title: "Minor Injury Treatment",
@@ -109,7 +103,7 @@ export default function MedicalServicesPage() {
     </p>
 
     <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-      {["Family Practice", "Walk-In Clinic", "Women’s Health", "Immunizations", "Chronic Care", "Uninsured Services"].map((item) => (
+      {["Family Practice", "Walk-In Clinic", "Women’s Health", "Pregnancy Testing & Prenatal Care", "Chronic Care", "Uninsured Services"].map((item) => (
         <span key={item} className="px-4 py-2 rounded-lg bg-green-100 border border-green-200 text-green-700 font-semibold">
           {item}
         </span>
@@ -136,7 +130,7 @@ export default function MedicalServicesPage() {
     </div>
   </section>
 
-  {/* CTA SECTION */}
+  {/* CTA SECTION 
   <section className="py-20 text-center">
     <h3 className="text-3xl font-extrabold text-green-700 font-space mb-4">Need Care Today?</h3>
     <p className="text-gray-700 mb-6">
@@ -151,7 +145,7 @@ export default function MedicalServicesPage() {
         Walk-In Info
       </a>
     </div>
-  </section>
+  </section> */}
 </div>
 
   );
