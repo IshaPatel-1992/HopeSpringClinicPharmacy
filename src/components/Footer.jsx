@@ -1,28 +1,45 @@
 import React from "react";
-import logo from "../assets/logo/Logo2.png";
+import logo from "../assets/logo/HopeSpringLogo.png";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-100 text-gray-800 py-8 font-raleway border-t border-green-200">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+    <footer className="bg-white border-t border-green-100">
+      <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
         
-        {/* Logo and Clinic Name */}
-        <div className="flex items-center space-x-4 mb-6 md:mb-0">
-          <img src={logo} alt="Clinic Logo" className="h-24 md:h-28 w-auto" />
+        {/* Logo */}
+        <div className="flex items-center">
+          <img
+            src={logo}
+            alt="Clinic Logo"
+            className="h-16 md:h-20 w-auto object-contain"
+          />
         </div>
 
-        {/* Socials & Copyright */}
-        <div className="flex flex-col items-center md:items-end space-y-3">
-          <div className="flex space-x-4 text-green-600 text-lg">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition duration-300" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition duration-300" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition duration-300" aria-label="Twitter"><FaTwitter /></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-800 transition duration-300" aria-label="LinkedIn"><FaLinkedinIn /></a>
+        {/* Socials + Copyright */}
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <div className="flex space-x-3">
+            {[
+              { Icon: FaFacebookF, label: "Facebook", url: "https://www.facebook.com" },
+              { Icon: FaInstagram, label: "Instagram", url: "https://www.instagram.com" },
+              { Icon: FaTwitter, label: "Twitter", url: "https://twitter.com" },
+              { Icon: FaLinkedinIn, label: "LinkedIn", url: "https://www.linkedin.com" },
+            ].map(({ Icon, label, url }) => (
+              <a
+                key={label}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="h-10 w-10 rounded-xl bg-green-50 text-green-800 flex items-center justify-center hover:bg-green-700 hover:text-white transition"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
 
-          <div className="text-xs text-green-700/70 text-center md:text-right mt-1">
-            &copy; {new Date().getFullYear()} HopeSpring Clinic & Pharmacy. All rights reserved.
+          <div className="text-xs text-green-900/70 text-center md:text-right">
+            &copy; {new Date().getFullYear()} HopeSpring Clinic &amp; Pharmacy. All rights reserved.
           </div>
         </div>
       </div>
