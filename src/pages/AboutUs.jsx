@@ -4,9 +4,9 @@ import { FaStethoscope, FaCapsules, FaUsers } from "react-icons/fa6";
 import { MdMedicalServices } from "react-icons/md";
 import { FaPhoneAlt, FaNotesMedical } from "react-icons/fa";
 
-import valueImg1 from "../assets/About/shutterstock_2175114179.jpg";
+import valueImg1 from "../assets/About/shutterstock_2310192627_Resize.png";
 import valueImg2 from "../assets/About/shutterstock_2454579437.jpg";
-import valueImg3 from "../assets/About/shutterstock_2680984159.jpg";
+import valueImg3 from "../assets/About/shutterstock_2175114179.jpg";
 
 const team = [
   {
