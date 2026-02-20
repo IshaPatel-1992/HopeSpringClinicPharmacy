@@ -22,6 +22,7 @@ const menuItems = [
       { label: "Medical Notes & Forms", href: "/medical-services", desc: "School, work, and medical documentation." },
       { label: "Health Education", href: "/medical-services", desc: "Prevention, wellness, and lifestyle guidance." },
       { label: "Uninsured Services", href: "/medical-services", desc: "Private-pay and IFHP options available." },
+      { label: "Out-of-Province & Out-of-Country Services", href: "/medical-services", desc: "Medical visits and physicals for patients without Alberta coverage." },
     ],
   },
   { label: "About Us", href: "/aboutuspg" },
