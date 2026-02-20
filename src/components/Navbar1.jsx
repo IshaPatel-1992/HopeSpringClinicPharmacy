@@ -24,10 +24,10 @@ const menuItems = [
       { label: "Uninsured Services", href: "/medical-services", desc: "Private-pay and IFHP options available." },
     ],
   },
+  { label: "About Us", href: "/aboutuspg" },
+  { label: "Contact Us", href: "/contactus" },
 ];
 
-{ /* { label: "About Us", href: "/aboutuspg" },
-  { label: "Contact Us", href: "/contactus" }, */ }
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -1,122 +1,269 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaUserMd, FaDirections } from "react-icons/fa";
-// Keep these imports if you plan to use later (currently commented sections)
-// import { FaPills, FaCertificate } from "react-icons/fa";
-// import concernPoster from "../assets/ContactUS/Poster_PatientConcerns.jpg";
+import { MdMedicalServices } from "react-icons/md";
+import { FaPhoneAlt, FaNotesMedical } from "react-icons/fa";
 
 export default function ContactForm() {
   return (
-    <section
+    <main
       id="contactus"
-      className="scroll-mt-36 pt-36 md:pt-40 pb-28 bg-green-50 text-gray-900 overflow-hidden"
+      className="min-h-screen scroll-mt-28 bg-gradient-to-br from-white via-brand-primary-light/30 to-brand-accent-light/30 text-gray-900 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-green-700 font-space mb-4">
-            Contact HopeSpring Clinic &amp; Pharmacy
-          </h2>
-          <p className="text-gray-700 font-raleway text-lg md:text-xl">
-            Have questions or need care? Reach our clinic — we’re here to help.
-          </p>
-        </div>
-
-        {/* Address Card */}
-        <div className="mb-10 bg-white/60 backdrop-blur-md rounded-2xl shadow-md border border-green-100 p-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <FaMapMarkerAlt className="text-2xl text-green-600" />
-                <h3 className="text-2xl font-semibold text-green-800 font-space">
-                  Our Address
-                </h3>
-              </div>
-              <p className="text-gray-700 font-medium">
-                151 Skyview Bay NE #2130, Calgary, AB T3N 1N6
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Parking available • Wheelchair accessible
-              </p>
-            </div>
-
-            <a
-              href="https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6/@51.1577844,-113.9583911,17z/data=!4m17!1m7!3m6!1s0x5371617d12551067:0xd43910279ae08e05!2s151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6!3b1!8m2!3d51.1577811!4d-113.9558162!4m8!1m0!1m5!1m1!1s0x5371617d12551067:0xd43910279ae08e05!2m2!1d-113.9558162!2d51.1577811!3e0?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-green-700 text-white font-semibold hover:bg-green-800 transition shadow-sm"
-            >
-              <FaDirections />
-              Get Directions
-            </a>
+      {/* Header / Hero */}
+      <section className="pt-24 md:pt-28 pb-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-md border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
+            <MdMedicalServices className="text-lg" />
+            Contact HopeSpring
           </div>
-        </div>
 
-        {/* Clinic Centered */}
-        <div className="flex justify-center mb-10">
-          <div className="w-full max-w-2xl bg-white/60 backdrop-blur-md rounded-2xl shadow-md border border-green-100 p-8 hover:shadow-xl transition text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <FaUserMd className="text-2xl text-green-600" />
-              <h3 className="text-2xl font-semibold text-green-800 font-space">
-                Clinic
-              </h3>
-            </div>
+          <h1
+            className="mt-6 text-3xl md:text-5xl font-extrabold text-text-primary"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            We’re here to help — reach the clinic anytime
+          </h1>
 
-            <div className="space-y-2 text-gray-700">
-              <p>
-                <span className="font-semibold">Phone:</span>{" "}
-                <a
-                  href="tel:+18259624673"
-                  className="text-green-700 hover:underline"
-                >
-                  (825) 962-4673
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Email:</span>{" "}
-                <a
-                  href="mailto:info@hopespringmedical.ca"
-                  className="text-green-700 hover:underline"
-                >
-                  info@hopespringmedical.ca
-                </a>
-              </p>
-              <p className="text-sm text-gray-600 pt-2">
-                <span className="font-semibold text-gray-700">Hours:</span>{" "}
-                Mon–Fri: 9am–5pm
-                <br />
-                Sat &amp; Sun: Closed
-              </p>
-            </div>
+          <p className="mt-4 max-w-2xl text-text-secondary text-lg">
+            Have questions or need care? Call, email, or visit us. We’ll guide you
+            to the right next step.
+          </p>
 
-            <div className="mt-6 flex justify-center gap-3 flex-wrap">
+          {/* CTAs (match Medical theme) */}
+          <div className="mt-8 flex flex-col md:flex-row gap-4 md:items-center">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="/contactus"
-                className="px-5 py-2.5 rounded-xl bg-green-700 text-white font-semibold hover:bg-green-800 transition shadow-sm"
+                href="tel:+18259624673"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                bg-brand-primary text-white
+                shadow-[0_8px_20px_rgba(93,122,137,0.22)]
+                hover:bg-brand-primary-dark hover:shadow-[0_10px_25px_rgba(93,122,137,0.32)]
+                transition"
               >
-                Book / Contact
+                <FaPhoneAlt />
+                Call (825) 962-4673
               </a>
+
               <a
-                href="/medical-services"
-                className="px-5 py-2.5 rounded-xl bg-white text-green-800 border border-green-200 font-semibold hover:bg-green-50 transition"
+                href="mailto:info@hopespringmedical.ca"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                bg-white/75 backdrop-blur-md border border-brand-accent/40 text-brand-primary
+                hover:bg-brand-accent-light/60 hover:border-brand-accent hover:shadow-sm transition"
+              >
+                <FaNotesMedical />
+                Email Us
+              </a>
+
+              <Link
+                to="/medical-services"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                bg-white/75 backdrop-blur-md border border-brand-accent/40 text-brand-primary
+                hover:bg-brand-accent-light/60 hover:border-brand-accent hover:shadow-sm transition"
               >
                 View Services
-              </a>
+              </Link>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Pharmacy (keep commented as-is)
-        <div className="bg-white/60 backdrop-blur-md rounded-2xl shadow-md border border-green-100 p-8 hover:shadow-xl transition">
-          ...
-        </div>
-        */}
+      {/* Content */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Left: Address + Hours (sticky like Medical page) */}
+            <aside className="lg:col-span-1 lg:sticky lg:top-28 self-start space-y-6">
+              {/* Address */}
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1">
+                    <FaMapMarkerAlt className="text-2xl text-brand-primary" />
+                  </div>
+                  <div>
+                    <h2
+                      className="text-xl font-bold text-text-primary"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      Our Address
+                    </h2>
+                    <p className="mt-2 text-text-secondary">
+                      151 Skyview Bay NE #2130, Calgary, AB T3N 1N6
+                    </p>
+                    <p className="mt-1 text-sm text-text-muted">
+                      Parking available • Wheelchair accessible
+                    </p>
+                  </div>
+                </div>
 
-        {/* Patient Concerns Poster (keep commented as-is)
-        <div className="bg-white/60 backdrop-blur-md rounded-2xl shadow-md border border-green-100 p-6">
-          ...
+                <a
+                  href="https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6/@51.1577844,-113.9583911,17z/data=!4m17!1m7!3m6!1s0x5371617d12551067:0xd43910279ae08e05!2s151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6!3b1!8m2!3d51.1577811!4d-113.9558162!4m8!1m0!1m5!1m1!1s0x5371617d12551067:0xd43910279ae08e05!2m2!1d-113.9558162!2d51.1577811!3e0?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                  bg-brand-primary text-white hover:bg-brand-primary-dark transition
+                  shadow-[0_8px_20px_rgba(93,122,137,0.22)]"
+                >
+                  <FaDirections />
+                  Get Directions
+                </a>
+              </div>
+
+              {/* Hours */}
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-text-primary">Clinic Hours</h3>
+                <ul className="mt-3 space-y-1 text-text-secondary text-sm">
+                  <li>Mon – Fri: 9:00 AM – 5:00 PM</li>
+                  <li>Saturday: Closed</li>
+                  <li>Sunday: Closed</li>
+                </ul>
+
+                <div className="mt-4 rounded-xl bg-brand-accent-light/60 border border-brand-accent/30 p-4">
+                  <div className="font-semibold text-text-primary">
+                    Walk-ins welcome
+                  </div>
+                  <p className="text-sm text-text-secondary mt-1">
+                    Walk-ins accepted during clinic hours based on availability.
+                    For faster service, call ahead.
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Contact */}
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-text-primary">Quick Contact</h3>
+                <div className="mt-3 text-sm text-text-secondary">
+                  📞{" "}
+                  <a href="tel:+18259624673" className="text-brand-primary font-medium hover:underline">
+                    (825) 962-4673
+                  </a>
+                  <br />
+                  ✉{" "}
+                  <a href="mailto:info@hopespringmedical.ca" className="text-brand-primary font-medium hover:underline">
+                    info@hopespringmedical.ca
+                  </a>
+                </div>
+              </div>
+            </aside>
+
+            {/* Right: Clinic card + Map embed */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Clinic Card */}
+              <section className="bg-white/70 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm">
+                <div className="flex items-start justify-between gap-4 flex-wrap">
+                  <div className="flex items-center gap-3">
+                    <FaUserMd className="text-2xl text-brand-primary" />
+                    <div>
+                      <h2
+                        className="text-2xl md:text-3xl font-extrabold text-text-primary"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      >
+                        Clinic
+                      </h2>
+                      <p className="text-text-secondary mt-1">
+                        Call or email — we’ll help you choose the right service.
+                      </p>
+                    </div>
+                  </div>
+
+                  <Link
+                    to="/medical-services"
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
+                    bg-white/70 border border-brand-accent/40 text-brand-primary
+                    hover:bg-brand-accent-light/60 hover:border-brand-accent transition"
+                  >
+                    View Services
+                  </Link>
+                </div>
+
+                <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                  <div className="rounded-2xl bg-white/80 border border-brand-gray-light p-5">
+                    <div className="text-sm text-text-muted">Phone</div>
+                    <a
+                      href="tel:+18259624673"
+                      className="mt-1 block text-lg font-semibold text-brand-primary hover:underline"
+                    >
+                      (825) 962-4673
+                    </a>
+                    <div className="mt-2 text-sm text-text-secondary">
+                      Best for appointments, questions, and walk-in availability.
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl bg-white/80 border border-brand-gray-light p-5">
+                    <div className="text-sm text-text-muted">Email</div>
+                    <a
+                      href="mailto:info@hopespringmedical.ca"
+                      className="mt-1 block text-lg font-semibold text-brand-primary hover:underline"
+                    >
+                      info@hopespringmedical.ca
+                    </a>
+                    <div className="mt-2 text-sm text-text-secondary">
+                      Great for documents, follow-ups, and general inquiries.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    to="/contactus"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                    bg-brand-primary text-white hover:bg-brand-primary-dark transition
+                    shadow-[0_8px_20px_rgba(93,122,137,0.22)]"
+                  >
+                    <FaNotesMedical />
+                    Book / Contact
+                  </Link>
+
+                  <a
+                    href="https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6/@51.1577844,-113.9583911,17z/data=!4m17!1m7!3m6!1s0x5371617d12551067:0xd43910279ae08e05!2s151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6!3b1!8m2!3d51.1577811!4d-113.9558162!4m8!1m0!1m5!1m1!1s0x5371617d12551067:0xd43910279ae08e05!2m2!1d-113.9558162!2d51.1577811!3e0?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                    bg-white/75 backdrop-blur-md border border-brand-accent/40 text-brand-primary
+                    hover:bg-brand-accent-light/60 hover:border-brand-accent hover:shadow-sm transition"
+                  >
+                    <FaDirections />
+                    Directions
+                  </a>
+                </div>
+              </section>
+
+              {/* Map Embed */}
+              <section className="bg-white/70 backdrop-blur-md rounded-2xl border border-brand-gray-light shadow-sm overflow-hidden">
+                <div className="p-6 md:p-8">
+                  <h3
+                    className="text-xl font-bold text-text-primary"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Find us on the map
+                  </h3>
+                  <p className="mt-2 text-text-secondary">
+                    151 Skyview Bay NE #2130, Calgary, AB T3N 1N6
+                  </p>
+                </div>
+
+                <div className="h-[360px] md:h-[420px] w-full">
+                  <iframe
+                    title="HopeSpring Location Map"
+                    className="w-full h-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=151%20Skyview%20Bay%20NE%20%232130,%20Calgary,%20AB%20T3N%201N6&output=embed"
+                  />
+                </div>
+              </section>
+
+              {/* Optional: Pharmacy card later (kept ready) */}
+              {/*
+              <section className="bg-white/70 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm">
+                ...
+              </section>
+              */}
+            </div>
+          </div>
         </div>
-        */}
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
