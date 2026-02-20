@@ -24,9 +24,21 @@ const SERVICES = [
   },
   {
     title: "Chronic & Minor Illness Care",
-    desc: "Support for diabetes, asthma, hypertension, and more.",
-    details:
-      "Monitoring and treatment plans, medication review, lifestyle guidance, and continuity of care.",
+    desc: "Monitoring and treatment plans, medication review, lifestyle guidance, and continuity of care.",
+    details: (
+      <div className="text-text-secondary leading-relaxed space-y-3">
+        {/* Optional: a soft note line (remove if you want only 1 paragraph) */}
+        <p className="text-sm text-text-muted">
+          If you’re unsure what you need, contact us and we’ll guide you to the right care.
+        </p>
+
+        <p>
+          We support chronic and minor illness care including diabetes management, hypertension (high blood pressure),
+          high cholesterol & heart risk monitoring, asthma & COPD, thyroid disorders, arthritis & chronic pain support,
+          mental health follow-ups, and medication renewals with ongoing reviews — and more.
+        </p>
+      </div>
+    )
   },
   {
     title: "Routine Physical Exams",
@@ -53,12 +65,6 @@ const SERVICES = [
       "Assessment, treatment and follow-up guidance for common non-emergency injuries.",
   },
   {
-    title: "Medical Notes & Forms",
-    desc: "School, work, and medical documentation.",
-    details:
-      "Forms and documentation based on assessment and clinic policy.",
-  },
-  {
     title: "Health Education",
     desc: "Prevention, wellness, and lifestyle guidance.",
     details:
@@ -66,10 +72,42 @@ const SERVICES = [
   },
   {
     title: "Uninsured Services",
-    desc: "Private-pay and IFHP options available.",
-    details:
-      "Options and pricing depend on service type — contact the clinic for details. We’ll clearly explain pricing before any uninsured service.",
+    desc: "Private-pay consultations and medical documentation.",
+    details: (
+      <div className="space-y-5">
+        <div>
+          <ul className="mt-2 list-disc pl-5 space-y-1 text-text-secondary">
+            <li>Uninsured Consultations</li>
+            <li>Medical Notes</li>
+            <li>Medical Forms</li>
+            <li>Miscellaneous Forms / Reports</li>
+            <li>School / Work Forms</li>
+          </ul>
+        </div>
+      </div>)
   },
+  {
+    title: "Out-of-Province & Out-of-Country Services",
+    desc: "Medical visits and physicals for patients without Alberta coverage.",
+    details: (
+      <div className="text-text-secondary leading-relaxed space-y-3">
+        <p>
+          We provide private-pay medical services for patients visiting from outside Alberta or Canada.
+        </p>
+
+        <p>
+          Services may include out-of-province office visits, out-of-province complete physicals,
+          out-of-country office visits, and out-of-country complete physicals.
+        </p>
+
+        <p className="text-sm text-text-muted">
+          These services are not covered by provincial health insurance.
+          Fees will be discussed prior to your visit.
+        </p>
+      </div>
+    ),
+  },
+
 ];
 
 export default function MedicalServices() {

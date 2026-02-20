@@ -49,8 +49,8 @@ export default function HeroSection() {
               animationDelay: "0.5s",
             }}
           >
-            Compassionate healthcare with experienced providers and modern
-            facilities — designed for your comfort and convenience.
+            "Compassionate healthcare with experienced providers and modern
+            facilities."
           </p>
 
           {/* CTA Buttons */}
