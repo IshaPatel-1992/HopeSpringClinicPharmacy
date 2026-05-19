@@ -1,8 +1,16 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaStethoscope, FaCapsules, FaUsers } from "react-icons/fa6";
+import {
+  FaPhoneAlt,
+  FaNotesMedical,
+  FaCheckCircle,
+  FaUsers,
+  FaUserMd,
+  FaShieldAlt,
+  FaHeartbeat,
+} from "react-icons/fa";
+import { FaStethoscope, FaCapsules } from "react-icons/fa6";
 import { MdMedicalServices } from "react-icons/md";
-import { FaPhoneAlt, FaNotesMedical } from "react-icons/fa";
 
 import valueImg1 from "../assets/About/shutterstock_2310192627_Resize.png";
 import valueImg2 from "../assets/About/shutterstock_2454579437.jpg";
@@ -14,13 +22,13 @@ const team = [
     credentials: "MD, CCFP",
     role: "Family Physician",
     photo: "https://via.placeholder.com/600x600",
-    bio: "Providing patient-centered care with over 10 years of experience in family medicine.",
+    bio: "Providing patient-centered care with a compassionate approach to family medicine and long-term wellness.",
   },
   {
     name: "John Smith",
     role: "Pharmacy Manager",
     photo: "https://via.placeholder.com/600x600",
-    bio: "Ensuring safe and effective medication management for our patients.",
+    bio: "Supporting patients with safe medication use, pharmacy counselling, and convenient prescription care.",
     licenses: ["Practice Permit No. ####", "Pharmacy License ####"],
   },
 ];
@@ -35,225 +43,144 @@ export default function AboutUs() {
   return (
     <main
       id="about"
-      className="min-h-screen scroll-mt-28 bg-gradient-to-br from-white via-brand-primary-light/30 to-brand-accent-light/30 text-gray-900 overflow-hidden"
+      className="min-h-screen scroll-mt-28 bg-gradient-to-br from-white via-brand-primary-light/25 to-brand-accent-light/35 text-text-primary overflow-hidden"
     >
-      {/* Header / Hero */}
-      <section className="pt-24 md:pt-28 pb-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-md border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
-            <MdMedicalServices className="text-lg" />
+      <section className="relative pt-12 pb-12">
+        <div className="absolute -top-28 -right-28 w-80 h-80 bg-sky-100/70 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 -left-28 w-80 h-80 bg-yellow-100/80 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
+            <MdMedicalServices />
             About HopeSpring
           </div>
 
           <h1
-            className="mt-6 text-3xl md:text-5xl font-extrabold text-text-primary"
+            className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Compassionate, coordinated healthcare — in one place
+            Compassionate clinic & pharmacy care — together
           </h1>
 
-          <p className="mt-4 max-w-2xl text-text-secondary text-lg">
-            We bring clinic care and pharmacy support together so you can get the right help, faster — with a team that knows you.
+          <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
+            HopeSpring brings medical care and pharmacy support into one
+            convenient setting, helping patients receive clear guidance,
+            coordinated service, and caring support at every step.
           </p>
 
-          {/* CTAs */}
-          <div className="mt-8 flex flex-col md:flex-row gap-4 md:items-center">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={handleShowTeam}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
-                bg-brand-primary text-white
-                shadow-[0_8px_20px_rgba(93,122,137,0.22)]
-                hover:bg-brand-primary-dark hover:shadow-[0_10px_25px_rgba(93,122,137,0.32)]
-                transition"
-              >
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
+            <button
+              onClick={handleShowTeam}
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
+              bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)]
+              hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <span className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
                 <FaUsers />
-                Meet Our Team
-              </button>
+              </span>
+              Meet Our Team
+            </button>
 
-              <Link
-                to="/contactus"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
-                bg-white/75 backdrop-blur-md border border-brand-accent/40 text-brand-primary
-                hover:bg-brand-accent-light/60 hover:border-brand-accent hover:shadow-sm transition"
-              >
+            <Link
+              to="/contactus"
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
+              bg-white border border-yellow-200 text-brand-primary shadow-sm
+              hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
+            >
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 flex items-center justify-center">
                 <FaNotesMedical />
-                Book / Ask
-              </Link>
+              </span>
+              Contact Us
+            </Link>
 
-              <a
-                href="tel:+18259624673"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
-                bg-white/75 backdrop-blur-md border border-brand-accent/40 text-brand-primary
-                hover:bg-brand-accent-light/60 hover:border-brand-accent hover:shadow-sm transition"
-              >
-                <FaPhoneAlt className="text-brand-accent" />
-                (825) 962-4673
-              </a>
-            </div>
+            <a
+              href="tel:+18259624673"
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
+              bg-white border border-brand-gray-light text-text-primary
+              hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
+            >
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 via-green-50 to-yellow-100 flex items-center justify-center text-brand-primary">
+                <FaPhoneAlt />
+              </span>
+              Call Clinic
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Values + Sidebar + Team (team moved up) */}
       <section className="pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-6">
-            {/* Left: Sidebar */}
-            <aside className="lg:col-span-1 lg:sticky lg:top-28 self-start space-y-6">
-              {/* Our promise */}
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
-                <h2
-                  className="text-xl font-bold text-text-primary"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Our promise
-                </h2>
-
-                <ul className="mt-4 space-y-2 text-text-secondary">
+            <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
+              <InfoCard icon={<FaHeartbeat />} title="Our Promise">
+                <ul className="space-y-2">
                   <li>• Clear guidance and respectful care</li>
-                  <li>• Team-based support (clinic + pharmacy)</li>
-                  <li>• Simple, helpful communication</li>
+                  <li>• Team-based support between clinic and pharmacy</li>
+                  <li>• Helpful communication and patient-first service</li>
                 </ul>
+              </InfoCard>
 
-                <div className="mt-6 rounded-xl bg-white/70 border border-brand-gray-light p-4">
-                  <div className="font-semibold text-text-primary">What to expect</div>
-                  <p className="text-sm text-text-secondary mt-1">
-                    A welcoming clinic experience with providers who listen, and a
-                    pharmacy team that helps you understand your medications.
-                  </p>
-                </div>
-              </div>
-
-              {/* Quick info */}
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-text-primary">Quick info</h3>
-
-                <div className="mt-3 text-sm text-text-secondary space-y-2">
-                  <div>
-                    <div className="font-semibold text-text-primary">Clinic & Pharmacy</div>
-                    <p>Coordinated care so you can get support in one place.</p>
-                  </div>
-
-                  <div className="mt-4 rounded-xl bg-brand-accent-light/60 border border-brand-accent/30 p-4">
-                    <div className="font-semibold text-text-primary">Need help choosing?</div>
-                    <p className="text-sm text-text-secondary mt-1">
-                      Contact us and we’ll guide you to the right service.
-                    </p>
-                  </div>
-
-                  <div className="pt-2">
-                    📞{" "}
-                    <a
-                      href="tel:+18259624673"
-                      className="text-brand-primary font-medium hover:underline"
-                    >
-                      (825) 962-4673
-                    </a>
-                    <br />
-                    ✉{" "}
-                    <a
-                      href="mailto:info@hopespringmedical.ca"
-                      className="text-brand-primary font-medium hover:underline"
-                    >
-                      info@hopespringmedical.ca
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Why us */}
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-text-primary">Why HopeSpring?</h3>
-
-                <ul className="mt-4 space-y-3 text-sm text-text-secondary">
+              <InfoCard icon={<FaCheckCircle />} title="Why HopeSpring?">
+                <ul className="space-y-2 text-sm">
                   <li>✓ Compassionate, patient-first approach</li>
-                  <li>✓ Experienced providers</li>
-                  <li>✓ Integrated pharmacy support</li>
+                  <li>✓ Clinic and pharmacy support in one place</li>
                   <li>✓ Modern, welcoming environment</li>
+                  <li>✓ Convenient access to everyday care</li>
                 </ul>
-              </div>
-              {/* Certifications / Trust */}
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-text-primary">
-                  Professional Standards
-                </h3>
+              </InfoCard>
 
-                <ul className="mt-4 space-y-3 text-sm text-text-secondary">
+              <InfoCard icon={<FaShieldAlt />} title="Professional Standards">
+                <ul className="space-y-2 text-sm">
                   <li>✓ Licensed healthcare professionals</li>
-                  <li>✓ Accredited pharmacy services</li>
-                  <li>✓ Patient privacy & confidentiality</li>
-                  <li>✓ Evidence-based care</li>
+                  <li>✓ Patient privacy and confidentiality</li>
+                  <li>✓ Evidence-informed care</li>
+                  <li>✓ Safe medication support</li>
                 </ul>
-              </div>
-              {/* Patient Feedback */}
-              <div className="bg-brand-accent-light/40 border border-brand-accent/30 rounded-2xl p-6 shadow-sm">
+              </InfoCard>
+
+              <div className="rounded-2xl border border-yellow-200 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 p-6 shadow-sm">
                 <p className="text-sm text-text-secondary italic leading-relaxed">
-                  “The team at HopeSpring truly listens. Having the clinic and pharmacy
-                  in one place made everything so much easier.”
+                  “Having medical and pharmacy support in one place makes care
+                  easier, more connected, and more convenient.”
                 </p>
                 <div className="mt-3 text-sm font-semibold text-text-primary">
-                  — Local Patient
+                  — HopeSpring Care Approach
                 </div>
               </div>
             </aside>
 
-            {/* Right: Values + Team */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Values (with Shutterstock images) */}
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  {
-                    img: valueImg1,
-                    alt: "Patient-centered medical care",
-                    Icon: FaStethoscope,
-                    title: "Patient-Centered Care",
-                    desc: "Comprehensive care with compassion, clarity, and personal attention.",
-                  },
-                  {
-                    img: valueImg2,
-                    alt: "Medical team collaboration",
-                    Icon: FaUsers,
-                    title: "Team-Based Approach",
-                    desc: "Coordinated support with doctors, nurses, pharmacists, and allied health.",
-                  },
-                  {
-                    img: valueImg3,
-                    alt: "Pharmacy and medication support",
-                    Icon: FaCapsules,
-                    title: "Integrated Pharmacy",
-                    desc: "On-site prescription services, counselling, and delivery options.",
-                  },
-                ].map(({ img, alt, Icon, title, desc }) => (
-                  <div
-                    key={title}
-                    className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light shadow-sm overflow-hidden hover:shadow-md transition"
-                  >
-                    <div className="relative h-36 md:h-40 w-full overflow-hidden">
-                      <img src={img} alt={alt} className="h-full w-full object-cover" loading="lazy" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
-                      <div
-                        className="absolute left-4 bottom-4 inline-flex items-center justify-center h-11 w-11 rounded-2xl
-                        bg-white/85 backdrop-blur-md border border-brand-gray-light shadow-sm"
-                      >
-                        <Icon className="text-xl text-brand-primary" />
-                      </div>
-                    </div>
+              <div className="grid md:grid-cols-3 gap-5">
+                <ValueCard
+                  img={valueImg1}
+                  alt="Patient-centered medical care"
+                  icon={<FaStethoscope />}
+                  title="Patient-Centered Care"
+                  desc="Compassionate care with clarity, respect, and personal attention."
+                />
 
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-text-primary">{title}</h3>
-                      <p className="mt-2 text-sm text-text-secondary leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
+                <ValueCard
+                  img={valueImg2}
+                  alt="Medical team collaboration"
+                  icon={<FaUsers />}
+                  title="Team-Based Approach"
+                  desc="Coordinated support between clinic providers and pharmacy care."
+                />
+
+                <ValueCard
+                  img={valueImg3}
+                  alt="Pharmacy and medication support"
+                  icon={<FaCapsules />}
+                  title="Integrated Pharmacy"
+                  desc="Prescription services, medication counselling, and delivery support."
+                />
               </div>
 
-              {/* Team (moved up right after values) */}
-              <section className="bg-white/70 backdrop-blur-md rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm">
-                {/* Scroll anchor */}
-                <div ref={teamRef} />
-
-                <div className="flex items-end justify-between gap-4 flex-wrap">
+              <section
+                ref={teamRef}
+                className="bg-white rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm scroll-mt-36"
+              >
+                <div className="flex items-start justify-between gap-4 flex-wrap">
                   <div>
                     <h2
                       className="text-2xl md:text-3xl font-extrabold text-text-primary"
@@ -262,95 +189,25 @@ export default function AboutUs() {
                       Meet Our Team
                     </h2>
                     <p className="mt-2 text-text-secondary">
-                      Friendly professionals dedicated to your care.
+                      Add doctor, pharmacist, and staff details here when final
+                      names, photos, and introductions are available.
                     </p>
                   </div>
 
                   <Link
                     to="/contactus"
                     className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
-                    bg-white/70 border border-brand-accent/40 text-brand-primary
-                    hover:bg-brand-accent-light/60 hover:border-brand-accent transition"
+                    bg-white border border-brand-accent/40 text-brand-primary
+                    hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 hover:border-yellow-200 transition"
                   >
-                    Contact the team
+                    Contact the Team
                   </Link>
                 </div>
 
                 <div className="mt-6 space-y-6">
-                  {team.map((member, idx) => {
-                    const reverse = idx % 2 === 1;
-
-                    return (
-                      <article
-                        key={idx}
-                        className="bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gray-light shadow-sm overflow-hidden hover:shadow-md transition"
-                      >
-                        <div className={`grid md:grid-cols-5 ${reverse ? "md:[direction:rtl]" : ""}`}>
-                          {/* Image */}
-                          <div className="md:col-span-2">
-                            <img
-                              src={member.photo}
-                              alt={member.name}
-                              className="h-64 md:h-full w-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-
-                          {/* Content */}
-                          <div className={`md:col-span-3 p-6 md:p-8 ${reverse ? "md:[direction:ltr]" : ""}`}>
-                            <div className="flex items-start justify-between gap-4 flex-wrap">
-                              <div>
-                                <h3 className="text-2xl font-extrabold text-text-primary">
-                                  {member.name}
-                                </h3>
-
-                                {member.credentials && (
-                                  <p className="text-sm text-text-muted mt-1">{member.credentials}</p>
-                                )}
-
-                                <div className="mt-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
-                  bg-brand-accent-light/60 border border-brand-accent/30 text-brand-primary">
-                                  {member.role}
-                                </div>
-                              </div>                              
-                            </div>
-
-                            <p className="mt-4 text-text-secondary leading-relaxed">
-                              {member.bio}
-                            </p>
-
-                            {/* Optional: role highlights (nice filler content) */}
-                            <div className="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
-                              <div className="rounded-xl bg-white/70 border border-brand-gray-light p-4">
-                                <div className="font-semibold text-text-primary">Focus</div>
-                                <div className="text-text-secondary mt-1">
-                                  Patient care, guidance, and long-term wellness support.
-                                </div>
-                              </div>
-                              <div className="rounded-xl bg-white/70 border border-brand-gray-light p-4">
-                                <div className="font-semibold text-text-primary">Approach</div>
-                                <div className="text-text-secondary mt-1">
-                                  Clear communication and coordinated follow-up.
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Licenses */}
-                            {member.licenses && (
-                              <div className="mt-5">
-                                <div className="text-sm font-semibold text-text-primary">Licenses</div>
-                                <ul className="mt-2 text-sm text-text-secondary list-disc list-inside space-y-1">
-                                  {member.licenses.map((lic, i) => (
-                                    <li key={i}>{lic}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </article>
-                    );
-                  })}
+                  {team.map((member, idx) => (
+                    <TeamCard key={idx} member={member} reverse={idx % 2 === 1} />
+                  ))}
                 </div>
               </section>
             </div>
@@ -358,5 +215,126 @@ export default function AboutUs() {
         </div>
       </section>
     </main>
+  );
+}
+
+function InfoCard({ icon, title, children }) {
+  return (
+    <div className="group bg-white rounded-2xl border border-brand-gray-light p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 text-brand-primary group-hover:rotate-6 transition">
+          {icon}
+        </span>
+
+        <h2
+          className="text-lg font-bold text-text-primary"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          {title}
+        </h2>
+      </div>
+
+      <div className="text-text-secondary leading-relaxed">{children}</div>
+    </div>
+  );
+}
+
+function ValueCard({ img, alt, icon, title, desc }) {
+  return (
+    <div className="group bg-white rounded-2xl border border-brand-gray-light shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+      <div className="relative h-40 w-full overflow-hidden">
+        <img
+          src={img}
+          alt={alt}
+          className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+          loading="lazy"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
+
+        <div className="absolute left-4 bottom-4 inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-white/90 border border-brand-gray-light shadow-sm text-brand-primary text-xl">
+          {icon}
+        </div>
+      </div>
+
+      <div className="p-5">
+        <h3 className="font-semibold text-text-primary group-hover:text-brand-primary transition">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm text-text-secondary leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function TeamCard({ member, reverse }) {
+  return (
+    <article className="group bg-white rounded-2xl border border-brand-gray-light shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+      <div className={`grid md:grid-cols-5 ${reverse ? "md:[direction:rtl]" : ""}`}>
+        <div className="md:col-span-2">
+          <img
+            src={member.photo}
+            alt={member.name}
+            className="h-64 md:h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <div className={`md:col-span-3 p-6 md:p-8 ${reverse ? "md:[direction:ltr]" : ""}`}>
+          <div className="flex items-start gap-3">
+            <span className="flex items-center justify-center min-w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 text-brand-primary group-hover:rotate-6 transition">
+              <FaUserMd />
+            </span>
+
+            <div>
+              <h3 className="text-2xl font-extrabold text-text-primary">
+                {member.name}
+              </h3>
+
+              {member.credentials && (
+                <p className="text-sm text-text-muted mt-1">
+                  {member.credentials}
+                </p>
+              )}
+
+              <div className="mt-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-200 text-brand-primary">
+                {member.role}
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-5 text-text-secondary leading-relaxed">
+            {member.bio}
+          </p>
+
+          <div className="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+            <div className="rounded-xl bg-white border border-brand-gray-light p-4">
+              <div className="font-semibold text-text-primary">Focus</div>
+              <div className="text-text-secondary mt-1">
+                Patient care, guidance, and long-term wellness support.
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-white border border-brand-gray-light p-4">
+              <div className="font-semibold text-text-primary">Approach</div>
+              <div className="text-text-secondary mt-1">
+                Clear communication and coordinated follow-up.
+              </div>
+            </div>
+          </div>
+
+          {member.licenses && (
+            <div className="mt-5">
+              <div className="text-sm font-semibold text-text-primary">Licenses</div>
+              <ul className="mt-2 text-sm text-text-secondary list-disc list-inside space-y-1">
+                {member.licenses.map((lic, i) => (
+                  <li key={i}>{lic}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }
