@@ -53,8 +53,7 @@ export default function AboutUs() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-text-secondary text-lg">
-            We bring clinic care and pharmacy support together so you can get the
-            right help, faster — with a team that knows you.
+            We bring clinic care and pharmacy support together so you can get the right help, faster — with a team that knows you.
           </p>
 
           {/* CTAs */}

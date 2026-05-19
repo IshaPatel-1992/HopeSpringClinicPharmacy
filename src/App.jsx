@@ -20,17 +20,21 @@ export default function App() {
   }, []);
 
   return (
+
+
     <Router>
       <Navbar1 />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutuspg" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactForm  />} />
-        <Route path="/medical-services" element={<MedicalServicesPage />} />
-        <Route path="/pharmacy-services" element={<PharmacyServicesPage />} />
-        {/* Add more pages here */}
-      </Routes>
-      
+      <main className="pt-24 md:pt-28">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutuspg" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactForm />} />
+          <Route path="/medical-services" element={<MedicalServicesPage />} />
+          <Route path="/pharmacy-services" element={<PharmacyServicesPage />} />
+          <Route path="/transfer-prescriptions" element={<PharmacyServicesPage />} />
+          {/* Add more pages here */}
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );
