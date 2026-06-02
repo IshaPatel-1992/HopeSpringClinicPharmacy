@@ -16,7 +16,20 @@ import {
   FaClock,
   FaQuestionCircle,
   FaCheckCircle,
+  FaFilePdf,
+  FaIdBadge,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
+
+//import pharmacistPhoto from "../assets/pharmacy/pharmacist-shraddha.jpg";
+import pharmacyLicensePdf from "../assets/documents/shraddha-agarwal-pharmacy-license-hopespringpharmacy.pdf";
+//import practicePermitPdf from "../assets/documents/shraddha-agarwal-pharmacy-license-hopespringpharmacy.pdf";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const PHARMACY_SERVICES = [
   {
@@ -92,9 +105,9 @@ const PHARMACY_SERVICES = [
       "We can assist with home care supplies such as wound care products, mobility aids, incontinence products, and other medical essentials.",
   },
   {
-    title: "Free Local Delivery",
-    desc: "Convenient prescription delivery across the local area.",
-    searchText: "free delivery prescription delivery local delivery medication delivery",
+    title: "Prescription Delivery",
+    desc: "Convenient prescription delivery service available.",
+    searchText: "prescription delivery local delivery medication delivery",
     icon: <FaTruck />,
     details:
       "Ask us about local prescription delivery options to make medication access easier and more convenient.",
@@ -128,7 +141,8 @@ export default function PharmacyServicesPage() {
 
   const hasQuery = query.trim().length > 0;
   const hasResults = searchedServices.length > 0;
-  const servicesToShow = hasQuery && !hasResults ? PHARMACY_SERVICES : searchedServices;
+  const servicesToShow =
+    hasQuery && !hasResults ? PHARMACY_SERVICES : searchedServices;
 
   useEffect(() => {
     if (!hasQuery) {
@@ -177,13 +191,13 @@ export default function PharmacyServicesPage() {
             className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight text-text-primary"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Pharmacy care made simple
+            Pharmacy Care Made Simple
           </h1>
 
           <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
             From prescriptions and vaccinations to consultations, travel health,
-            medication packaging, and delivery support — our pharmacy team is here
-            to make everyday care easier.
+            medication packaging, and delivery support — our pharmacy team is
+            here to make everyday care easier.
           </p>
 
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-center">
@@ -203,6 +217,7 @@ export default function PharmacyServicesPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/contactus"
+                onClick={scrollToTop}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
                 bg-brand-primary text-white shadow-[0_8px_20px_rgba(0,64,44,0.20)]
                 hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-0.5 transition"
@@ -230,7 +245,9 @@ export default function PharmacyServicesPage() {
 
           {hasQuery && !hasResults && (
             <div className="mt-5 rounded-2xl bg-white border border-yellow-200 p-4 shadow-sm text-text-secondary">
-              <strong className="text-text-primary">No matching pharmacy service found.</strong>{" "}
+              <strong className="text-text-primary">
+                No matching pharmacy service found.
+              </strong>{" "}
               Showing all pharmacy services below.
             </div>
           )}
@@ -243,22 +260,25 @@ export default function PharmacyServicesPage() {
             <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
               <InfoCard icon={<FaClock />} title="Pharmacy Hours">
                 <ul className="space-y-1 text-sm">
-                  <li>Mon – Fri: 9:00 AM – 5:00 PM</li>
-                  <li>Saturday: Closed</li>
-                  <li>Sunday: Closed</li>
+                  <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
+                  <li>Saturday: 10:00 AM – 2:00 PM</li>
+                  <li>Sunday & Holidays: Closed</li>
                 </ul>
 
                 <div className="mt-4 rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
-                  <div className="font-semibold text-text-primary">Need medication support?</div>
+                  <div className="font-semibold text-text-primary">
+                    Need medication support?
+                  </div>
                   <p className="text-sm text-text-secondary mt-1">
-                    Call ahead for availability, vaccine eligibility, or delivery questions.
+                    Call ahead for availability, vaccine eligibility, refill
+                    support, or delivery questions.
                   </p>
                 </div>
               </InfoCard>
 
               <InfoCard icon={<FaTruck />} title="Convenience">
                 <ul className="space-y-2 text-sm">
-                  <li>✓ Free local delivery options</li>
+                  <li>✓ Local prescription delivery options</li>
                   <li>✓ Medication packaging support</li>
                   <li>✓ Prescription and refill guidance</li>
                   <li>✓ Friendly pharmacy team</li>
@@ -268,12 +288,22 @@ export default function PharmacyServicesPage() {
               <InfoCard icon={<FaQuestionCircle />} title="Frequently Asked">
                 <div className="space-y-3 text-sm">
                   <div>
-                    <div className="font-semibold text-text-primary">Can I transfer my prescription?</div>
-                    <p>Yes — online transfer form is coming soon. For now, please contact us directly.</p>
+                    <div className="font-semibold text-text-primary">
+                      Can I transfer my prescription?
+                    </div>
+                    <p>
+                      Yes — online transfer form is coming soon. For now, please
+                      contact us directly.
+                    </p>
                   </div>
                   <div>
-                    <div className="font-semibold text-text-primary">Do you offer vaccines?</div>
-                    <p>Yes, select vaccinations may be available based on eligibility and supply.</p>
+                    <div className="font-semibold text-text-primary">
+                      Do you offer vaccines?
+                    </div>
+                    <p>
+                      Yes, select vaccinations may be available based on
+                      eligibility and supply.
+                    </p>
                   </div>
                 </div>
               </InfoCard>
@@ -285,6 +315,102 @@ export default function PharmacyServicesPage() {
                   <li>✓ Convenient access to care</li>
                   <li>✓ Compassionate, community-focused service</li>
                 </ul>
+              </InfoCard>
+
+              <InfoCard icon={<FaIdBadge />} title="Pharmacist & License Information">
+                <div className="space-y-4 text-sm">
+                  <div className="flex items-center gap-4">
+                    {/*<img
+                      src={pharmacistPhoto}
+                      alt="Shraddha Agarwal Pharmacist"
+                      className="w-20 h-20 rounded-2xl object-cover border border-brand-gray-light shadow-sm"
+                    />*/}
+
+                    <div
+  className="w-20 h-20 rounded-2xl flex items-center justify-center
+  bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100
+  border border-brand-gray-light shadow-sm"
+>
+  <FaUserMd className="text-4xl text-brand-primary" />
+</div>
+
+                    <div>
+                      <div className="font-bold text-text-primary">
+                        Shraddha Agarwal
+                      </div>
+                      <div className="text-text-secondary">
+                        Proprietor & Licensee
+                      </div>
+                      <div className="text-text-muted">ACP 13158</div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="flex items-start gap-2">
+                      <FaPhoneAlt className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Phone:</strong>{" "}
+                        <a
+                          href="tel:+1587-534-2502"
+                          className="text-brand-primary font-semibold hover:underline"
+                        >
+                          587-534-2502
+                        </a>
+                      </span>
+                    </p>
+
+                    <p className="flex items-start gap-2">
+                      <FaEnvelope className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Email:</strong>{" "}
+                        <a
+                          href="mailto:hsskypharmacy@gmail.com"
+                          className="text-brand-primary font-semibold hover:underline"
+                        >
+                          hsskypharmacy@gmail.com
+                        </a>
+                      </span>
+                    </p>
+
+                    <p className="flex items-start gap-2">
+                      <FaMapMarkerAlt className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Business Address:</strong> 2130-151 Skyview Bay
+                        NE, Calgary, AB T3N 2K3
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
+                    The licensee is required to provide, on request of a
+                    patient, the name and practice permit number of any
+                    regulated member who provides service to the patient or
+                    engages in the practice of pharmacy with respect to a
+                    patient.
+                  </div>
+
+                  <div className="space-y-2">
+                    <a
+                      href={pharmacyLicensePdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
+                    >
+                      <FaFilePdf />
+                      View Pharmacy License
+                    </a>
+
+                    {/* <a
+                      href={practicePermitPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-white border border-brand-accent/40 text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 transition"
+                    >
+                      <FaFilePdf />
+                      View Practice Permit
+                    </a>*/}
+                  </div>
+                </div>
               </InfoCard>
             </aside>
 
@@ -349,6 +475,7 @@ export default function PharmacyServicesPage() {
                         <div className="mt-5 flex flex-wrap gap-3">
                           <Link
                             to="/contactus"
+                            onClick={scrollToTop}
                             className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
                             bg-brand-primary text-white hover:bg-brand-primary-dark transition"
                           >
@@ -357,6 +484,7 @@ export default function PharmacyServicesPage() {
 
                           <Link
                             to="/contactus"
+                            onClick={scrollToTop}
                             className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
                             bg-white border border-brand-accent/40 text-brand-primary
                             hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50

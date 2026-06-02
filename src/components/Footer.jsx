@@ -64,35 +64,70 @@ export default function Footer() {
             className="h-16 w-auto object-contain"
           />
 
-          <p className="mt-4 text-sm text-text-secondary leading-relaxed">
-            Complete medical clinic and pharmacy care in one convenient location.
-          </p>
+          <div className="mt-5 space-y-4 text-sm text-text-secondary">
+            <div className="rounded-xl bg-brand-primary-light/40 p-3 border border-brand-gray-light">
+              <div className="font-semibold text-text-primary mb-2">
+                Medical Clinic
+              </div>
 
-          <div className="mt-5 space-y-3 text-sm text-text-secondary">
-            <a href="tel:+18259624673" className="flex items-center gap-3 hover:text-brand-primary transition">
-              <span className="footer-icon"><FaPhoneAlt /></span>
-              (825) 962-4673
-            </a>
+              <a
+                href="tel:5875342506"
+                className="flex items-center gap-3 hover:text-brand-primary transition"
+              >
+                <span className="footer-icon">
+                  <FaPhoneAlt />
+                </span>
+                (587) 534-2506
+              </a>
 
-            <a href="mailto:info@hopespringmedical.ca" className="flex items-center gap-3 hover:text-brand-primary transition">
-              <span className="footer-icon"><FaEnvelope /></span>
-              info@hopespringmedical.ca
-            </a>
+              <a
+                href="mailto:info@hopespringmedical.ca"
+                className="flex items-center gap-3 mt-2 hover:text-brand-primary transition"
+              >
+                <span className="footer-icon">
+                  <FaEnvelope />
+                </span>
+                info@hopespringmedical.ca
+              </a>
+            </div>
+
+            <div className="rounded-xl bg-brand-accent-light/40 p-3 border border-brand-gray-light">
+              <div className="font-semibold text-text-primary mb-2">
+                Pharmacy
+              </div>
+
+              <a
+                href="tel:5875342502"
+                className="flex items-center gap-3 hover:text-brand-primary transition"
+              >
+                <span className="footer-icon">
+                  <FaPhoneAlt />
+                </span>
+                (587) 534-2502
+              </a>
+
+              <a
+                href="mailto:hsskypharmacy@gmail.com"
+                className="flex items-center gap-3 mt-2 hover:text-brand-primary transition"
+              >
+                <span className="footer-icon">
+                  <FaEnvelope />
+                </span>
+                hsskypharmacy@gmail.com
+              </a>
+            </div>
 
             <div className="flex items-start gap-3">
-              <span className="footer-icon mt-0.5"><FaMapMarkerAlt /></span>
-              <span>151 Skyview Bay NE #2130, Calgary, AB T3N 1N6</span>
+              <span className="footer-icon mt-0.5">
+                <FaMapMarkerAlt />
+              </span>
+              <span>
+                151 Skyview Bay NE #2130,
+                <br />
+                Calgary, AB T3N 2K3
+              </span>
             </div>
           </div>
-
-          <Link
-            to="/contactus"
-            className="mt-5 inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold
-            bg-brand-primary text-white shadow-[0_8px_20px_rgba(0,64,44,0.18)]
-            hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-0.5 transition"
-          >
-            Contact / Book Appointment
-          </Link>
         </div>
 
         <div className="bg-white/80 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
@@ -110,7 +145,9 @@ export default function Footer() {
                   to={item.to}
                   className="group inline-flex items-center gap-2 text-text-secondary hover:text-brand-primary transition"
                 >
-                  {item.icon && <span className="text-brand-primary">{item.icon}</span>}
+                  {item.icon && (
+                    <span className="text-brand-primary">{item.icon}</span>
+                  )}
                   <span className="relative">
                     {item.label}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400 transition-all duration-300 group-hover:w-full" />
@@ -144,19 +181,37 @@ export default function Footer() {
             Hours
           </h4>
 
-          <div className="space-y-3 text-sm text-text-secondary">
-            <div className="flex items-center gap-3">
-              <span className="footer-icon"><FaClock /></span>
-              <span>Mon – Fri: 9:00 AM – 5:00 PM</span>
+          <div className="flex items-start gap-3 text-sm text-text-secondary">
+            <span className="footer-icon mt-1">
+              <FaClock />
+            </span>
+
+            <div className="space-y-2 w-full">
+              <div className="flex justify-between border-b border-gray-100 pb-1">
+                <span>Monday – Friday</span>
+                <span className="font-medium">9:00 AM – 6:00 PM</span>
+              </div>
+
+              <div className="flex justify-between border-b border-gray-100 pb-1">
+                <span>Saturday</span>
+                <span className="font-medium">10:00 AM – 2:00 PM</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>Sundays & Holidays</span>
+                <span className="font-medium text-red-600">Closed</span>
+              </div>
             </div>
-            <div className="pl-11">Saturday: Closed</div>
-            <div className="pl-11">Sunday: Closed</div>
           </div>
 
           <div className="mt-5 rounded-2xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
-            <div className="font-semibold text-text-primary">Clinic & Pharmacy</div>
+            <div className="font-semibold text-text-primary">
+              HopeSpring Medical Clinic & Pharmacy
+            </div>
             <p className="mt-1 text-sm text-text-secondary">
-              Walk-ins and pharmacy services are available based on provider availability and service eligibility.
+              Family medicine, walk-in care, pharmacy services, prescription
+              support, vaccinations, and patient care services in one convenient
+              location.
             </p>
           </div>
         </div>
@@ -216,7 +271,7 @@ export default function Footer() {
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
               name: "HopeSpring Medical Clinic",
-              telephone: "+1-825-962-4673",
+              telephone: "+1-587-534-2506",
               email: "info@hopespringmedical.ca",
               url: "https://hopespringmedical.ca",
               address: {
@@ -224,26 +279,27 @@ export default function Footer() {
                 streetAddress: "151 Skyview Bay NE #2130",
                 addressLocality: "Calgary",
                 addressRegion: "AB",
-                postalCode: "T3N 1N6",
+                postalCode: "T3N 2K3",
                 addressCountry: "CA",
               },
-              openingHours: "Mo-Fr 09:00-17:00",
+              openingHours: "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
             },
             {
               "@context": "https://schema.org",
               "@type": "Pharmacy",
               name: "HopeSpring Pharmacy",
-              telephone: "+1-825-962-4673",
+              telephone: "+1-587-534-2502",
+              email: "hsskypharmacy@gmail.com",
               url: "https://hopespringmedical.ca/pharmacy-services",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "151 Skyview Bay NE #2130",
                 addressLocality: "Calgary",
                 addressRegion: "AB",
-                postalCode: "T3N 1N6",
+                postalCode: "T3N 2K3",
                 addressCountry: "CA",
               },
-              openingHours: "Mo-Fr 09:00-17:00",
+              openingHours: "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
             },
           ]),
         }}

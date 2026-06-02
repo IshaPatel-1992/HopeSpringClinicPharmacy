@@ -10,7 +10,15 @@ import {
   FaClock,
   FaQuestionCircle,
   FaCheckCircle,
+  FaClinicMedical,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaHeartbeat,
 } from "react-icons/fa";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const SERVICES = [
   {
@@ -59,6 +67,14 @@ const SERVICES = [
     searchText: "physical exam annual checkup preventive screening wellness",
     details:
       "Health assessments, screening recommendations, and wellness planning tailored to your needs.",
+  },
+  {
+    title: "Strep Throat Testing",
+    desc: "Rapid assessment and testing for suspected strep throat infections.",
+    searchText:
+      "strep throat testing sore throat rapid strep test throat infection fever swollen tonsils",
+    details:
+      "We provide assessment and testing for suspected strep throat. If appropriate, treatment options and follow-up recommendations will be discussed based on your symptoms and test results.",
   },
   {
     title: "Women’s Health",
@@ -149,7 +165,6 @@ export default function MedicalServices() {
 
   const hasQuery = query.trim().length > 0;
   const hasResults = searchedServices.length > 0;
-
   const servicesToShow = hasQuery && !hasResults ? SERVICES : searchedServices;
 
   useEffect(() => {
@@ -196,7 +211,7 @@ export default function MedicalServices() {
             className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight text-text-primary"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Care for your health — today and long-term
+            Care for Your Health — Today and Long-Term
           </h1>
 
           <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
@@ -221,6 +236,7 @@ export default function MedicalServices() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/contactus"
+                onClick={scrollToTop}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
                 bg-brand-primary text-white shadow-[0_8px_20px_rgba(0,64,44,0.20)]
                 hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-0.5 transition"
@@ -230,14 +246,14 @@ export default function MedicalServices() {
               </Link>
 
               <a
-                href="tel:+18259624673"
+                href="tel:+15875342506"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
                 bg-white border border-brand-accent/40 text-brand-primary
                 hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50
                 hover:border-yellow-200 hover:shadow-sm transition"
               >
                 <FaPhoneAlt className="text-brand-accent" />
-                (825) 962-4673
+                587-534-2506
               </a>
             </div>
           </div>
@@ -255,7 +271,7 @@ export default function MedicalServices() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-6">
             <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
-              <InfoCard icon={<FaIdCard />} title="What to bring">
+              <InfoCard icon={<FaIdCard />} title="What to Bring">
                 <ul className="space-y-2">
                   <li>• Government ID and health card, if applicable</li>
                   <li>• Current medications list</li>
@@ -265,15 +281,15 @@ export default function MedicalServices() {
 
               <InfoCard icon={<FaClock />} title="Clinic Hours">
                 <ul className="space-y-1 text-sm">
-                  <li>Mon – Fri: 9:00 AM – 5:00 PM</li>
-                  <li>Saturday: Closed</li>
-                  <li>Sunday: Closed</li>
+                  <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
+                  <li>Saturday: 10:00 AM – 2:00 PM</li>
+                  <li>Sunday & Holidays: Closed</li>
                 </ul>
 
                 <div className="mt-4 rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
                   <div className="font-semibold text-text-primary">Walk-ins welcome</div>
                   <p className="text-sm text-text-secondary mt-1">
-                    Walk-ins accepted during clinic hours based on availability.
+                    Walk-ins are accepted during clinic hours based on provider availability.
                   </p>
                 </div>
               </InfoCard>
@@ -282,22 +298,100 @@ export default function MedicalServices() {
                 <div className="space-y-3 text-sm">
                   <div>
                     <div className="font-semibold text-text-primary">Do I need an appointment?</div>
-                    <p>Walk-ins are welcome for non-emergency concerns.</p>
+                    <p>Walk-ins are welcome for non-emergency concerns, subject to availability.</p>
                   </div>
                   <div>
                     <div className="font-semibold text-text-primary">Do you accept uninsured patients?</div>
-                    <p>Yes, private-pay options are available.</p>
+                    <p>Yes, private-pay options are available for uninsured services.</p>
                   </div>
                 </div>
               </InfoCard>
 
               <InfoCard icon={<FaCheckCircle />} title="Why Choose HopeSpring?">
                 <ul className="space-y-2 text-sm">
-                  <li>✓ Experienced providers</li>
-                  <li>✓ Modern, welcoming clinic</li>
-                  <li>✓ Walk-in availability</li>
-                  <li>✓ Compassionate care</li>
+                  <li>✓ Experienced healthcare providers</li>
+                  <li>✓ Modern, welcoming clinic environment</li>
+                  <li>✓ Walk-in and family care support</li>
+                  <li>✓ Clinic and pharmacy in one location</li>
                 </ul>
+              </InfoCard>
+
+              <InfoCard icon={<FaClinicMedical />} title="Clinic Information">
+                <div className="space-y-4 text-sm">
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="w-20 h-20 rounded-2xl flex items-center justify-center
+                      bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100
+                      border border-brand-gray-light shadow-sm"
+                    >
+                      <FaUserMd className="text-4xl text-brand-primary" />
+                    </div>
+
+                    <div>
+                      <div className="font-bold text-text-primary">
+                        HopeSpring Medical Clinic
+                      </div>
+                      <div className="text-text-secondary">
+                        Family Practice & Walk-In Care
+                      </div>
+                      <div className="text-text-muted">
+                        Patient-focused medical support
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="flex items-start gap-2">
+                      <FaPhoneAlt className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Clinic Phone:</strong>{" "}
+                        <a
+                          href="tel:+15875342506"
+                          className="text-brand-primary font-semibold hover:underline"
+                        >
+                          587-534-2506
+                        </a>
+                      </span>
+                    </p>
+
+                    <p className="flex items-start gap-2">
+                      <FaEnvelope className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Email:</strong>{" "}
+                        <a
+                          href="mailto:info@hopespringmedical.ca"
+                          className="text-brand-primary font-semibold hover:underline"
+                        >
+                          info@hopespringmedical.ca
+                        </a>
+                      </span>
+                    </p>
+
+                    <p className="flex items-start gap-2">
+                      <FaMapMarkerAlt className="mt-1 text-brand-primary" />
+                      <span>
+                        <strong>Address:</strong> 2130-151 Skyview Bay NE,
+                        Calgary, AB T3N 2K3
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
+                    Our clinic provides family practice, walk-in care,
+                    preventive health support, medical forms, physical exams,
+                    women’s health services, and private-pay medical services
+                    in a welcoming community setting.
+                  </div>
+
+                  <Link
+                    to="/contactus"
+                    onClick={scrollToTop}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
+                  >
+                    <FaNotesMedical />
+                    Contact Clinic
+                  </Link>
+                </div>
               </InfoCard>
             </aside>
 
@@ -362,6 +456,7 @@ export default function MedicalServices() {
                         <div className="mt-5 flex flex-wrap gap-3">
                           <Link
                             to="/contactus"
+                            onClick={scrollToTop}
                             className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
                             bg-brand-primary text-white hover:bg-brand-primary-dark transition"
                           >
@@ -370,6 +465,7 @@ export default function MedicalServices() {
 
                           <Link
                             to="/contactus"
+                            onClick={scrollToTop}
                             className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
                             bg-white border border-brand-accent/40 text-brand-primary
                             hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50

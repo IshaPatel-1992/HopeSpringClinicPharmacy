@@ -11,10 +11,13 @@ import {
   FaPrescriptionBottleAlt,
   FaQuestionCircle,
 } from "react-icons/fa";
-import { MdMedicalServices } from "react-icons/md";
 
 const directionUrl =
   "https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 export default function ContactForm() {
   return (
@@ -36,50 +39,38 @@ export default function ContactForm() {
             className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Contact Clinic & Pharmacy
+            Contact HopeSpring Medical Clinic & Pharmacy
           </h1>
 
           <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
-            Call, email, visit us, or use our contact form. Our team will help
-            guide you to the right clinic or pharmacy service.
+            We are here to help with clinic appointments, pharmacy services,
+            prescription support, directions, and general inquiries.
           </p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
             <a
-              href="tel:+18259624673"
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
-              bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)]
-              hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
+              href="tel:+15875342506"
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)] hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
             >
-              <span className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-                <FaPhoneAlt />
-              </span>
-              Call Us
+              <FaPhoneAlt />
+              Call Clinic
             </a>
 
             <a
-              href="mailto:info@hopespringmedical.ca"
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
-              bg-white border border-yellow-200 text-brand-primary shadow-sm
-              hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
+              href="tel:+15875342502"
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-yellow-200 text-brand-primary shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
             >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 flex items-center justify-center">
-                <FaEnvelope />
-              </span>
-              Email Us
+              <FaPrescriptionBottleAlt />
+              Call Pharmacy
             </a>
 
             <a
               href={directionUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold
-              bg-white border border-brand-gray-light text-text-primary
-              hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
+              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-brand-gray-light text-text-primary hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
             >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 via-green-50 to-yellow-100 flex items-center justify-center text-brand-primary">
-                <FaDirections />
-              </span>
+              <FaDirections />
               Directions
             </a>
           </div>
@@ -100,8 +91,7 @@ export default function ContactForm() {
                   href={directionUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
-                  bg-brand-primary text-white hover:bg-brand-primary-dark transition shadow-sm"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition shadow-sm"
                 >
                   <FaDirections />
                   Get Directions
@@ -111,22 +101,13 @@ export default function ContactForm() {
               <InfoCard icon={<FaClock />} title="Hours of Operation">
                 <div className="space-y-4">
                   <div>
-                    <div className="font-semibold text-text-primary">Clinic Hours</div>
+                    <div className="font-semibold text-text-primary">
+                      Clinic & Pharmacy Hours
+                    </div>
                     <ul className="mt-2 space-y-1 text-sm">
-                      <li>Mon – Fri: 9:00 AM – 5:00 PM</li>
-                      <li>Saturday: Closed</li>
-                      <li>Sunday: Closed</li>
-                    </ul>
-                  </div>
-
-                  <div className="h-px bg-gradient-to-r from-yellow-200 via-green-300 to-sky-200" />
-
-                  <div>
-                    <div className="font-semibold text-text-primary">Pharmacy Hours</div>
-                    <ul className="mt-2 space-y-1 text-sm">
-                      <li>Mon – Fri: 9:00 AM – 5:00 PM</li>
-                      <li>Saturday: Closed</li>
-                      <li>Sunday: Closed</li>
+                      <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
+                      <li>Saturday: 10:00 AM – 2:00 PM</li>
+                      <li>Sunday & Holidays: Closed</li>
                     </ul>
                   </div>
                 </div>
@@ -135,7 +116,8 @@ export default function ContactForm() {
               <InfoCard icon={<FaQuestionCircle />} title="Quick Note">
                 <p className="text-sm">
                   Walk-ins and pharmacy services may depend on provider
-                  availability and service eligibility. Calling ahead is recommended.
+                  availability and service eligibility. Calling ahead is
+                  recommended.
                 </p>
               </InfoCard>
             </aside>
@@ -146,9 +128,10 @@ export default function ContactForm() {
                   <ContactCard
                     icon={<FaUserMd />}
                     title="Medical Clinic"
-                    phone="(825) 962-4673"
+                    phone="587-534-2506"
+                    tel="+15875342506"
                     email="info@hopespringmedical.ca"
-                    description="For appointments, walk-in availability, medical questions, forms, and general clinic inquiries."
+                    description="For appointments, walk-in availability, medical forms, and general clinic inquiries."
                     link="/medical-services"
                     linkText="View Clinic Services"
                   />
@@ -156,8 +139,9 @@ export default function ContactForm() {
                   <ContactCard
                     icon={<FaPrescriptionBottleAlt />}
                     title="Pharmacy"
-                    phone="(825) 962-4673"
-                    email="info@hopespringmedical.ca"
+                    phone="587-534-2502"
+                    tel="+15875342502"
+                    email="hsskypharmacy@gmail.com"
                     description="For prescriptions, refills, vaccinations, delivery, medication packaging, and pharmacy service questions."
                     link="/pharmacy-services"
                     linkText="View Pharmacy Services"
@@ -166,23 +150,15 @@ export default function ContactForm() {
               </section>
 
               <section className="bg-white rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm">
-                <div className="flex items-start justify-between gap-4 flex-wrap">
-                  <div>
-                    <h2
-                      className="text-2xl md:text-3xl font-extrabold text-text-primary"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      Contact Form
-                    </h2>
-                    <p className="mt-2 text-text-secondary">
-                      Microsoft Form can be embedded here once finalized.
-                    </p>
-                  </div>
-
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-200 text-brand-primary">
-                    Coming Soon
-                  </span>
-                </div>
+                <h2
+                  className="text-2xl md:text-3xl font-extrabold text-text-primary"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Contact Form
+                </h2>
+                <p className="mt-2 text-text-secondary">
+                  Microsoft Form can be embedded here once finalized.
+                </p>
 
                 <div className="mt-6 rounded-2xl border border-dashed border-yellow-200 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 p-6 text-text-secondary">
                   Contact Us Microsoft Form placeholder. Replace this area with
@@ -196,7 +172,7 @@ export default function ContactForm() {
                     className="text-xl font-bold text-text-primary"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Find us on the map
+                    Find Us on the Map
                   </h3>
                   <p className="mt-2 text-text-secondary">
                     151 Skyview Bay NE #2130, Calgary, AB T3N 1N6
@@ -242,7 +218,16 @@ function InfoCard({ icon, title, children }) {
   );
 }
 
-function ContactCard({ icon, title, phone, email, description, link, linkText }) {
+function ContactCard({
+  icon,
+  title,
+  phone,
+  tel,
+  email,
+  description,
+  link,
+  linkText,
+}) {
   return (
     <div className="group relative rounded-2xl border border-brand-gray-light bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
       <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400 group-hover:w-full transition-all duration-300" />
@@ -265,12 +250,18 @@ function ContactCard({ icon, title, phone, email, description, link, linkText })
       </p>
 
       <div className="mt-5 space-y-2 text-sm">
-        <a href={`tel:${phone}`} className="flex items-center gap-2 text-brand-primary font-semibold hover:underline">
+        <a
+          href={`tel:${tel}`}
+          className="flex items-center gap-2 text-brand-primary font-semibold hover:underline"
+        >
           <FaPhoneAlt />
           {phone}
         </a>
 
-        <a href={`mailto:${email}`} className="flex items-center gap-2 text-brand-primary font-semibold hover:underline">
+        <a
+          href={`mailto:${email}`}
+          className="flex items-center gap-2 text-brand-primary font-semibold hover:underline"
+        >
           <FaEnvelope />
           {email}
         </a>
@@ -278,9 +269,8 @@ function ContactCard({ icon, title, phone, email, description, link, linkText })
 
       <Link
         to={link}
-        className="mt-5 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl font-semibold
-        bg-white border border-brand-accent/40 text-brand-primary
-        hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 hover:border-yellow-200 transition"
+        onClick={scrollToTop}
+        className="mt-5 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl font-semibold bg-white border border-brand-accent/40 text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 hover:border-yellow-200 transition"
       >
         {linkText}
       </Link>

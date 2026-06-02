@@ -17,6 +17,11 @@ const menuItems = [
     submenu: [
       { label: "Family Practice", href: "/medical-services", desc: "Comprehensive care for patients of all ages." },
       { label: "Walk-in Clinic", href: "/medical-services", desc: "No appointment needed for urgent concerns." },
+      {
+        label: "Strep Throat Testing",
+        href: "/medical-services",
+        desc: "Rapid testing and assessment for suspected strep throat infections.",
+      },
       { label: "Pap Smear / Pap Test", href: "/medical-services", desc: "Cervical cancer screening and prevention." },
       { label: "Chronic & Minor Illness Care", href: "/medical-services", desc: "Diabetes, asthma, hypertension, and more." },
       { label: "Routine Physical Exams", href: "/medical-services", desc: "Annual check-ups and preventive screenings." },
@@ -38,7 +43,7 @@ const menuItems = [
       { label: "Consultation", href: "/pharmacy-services", desc: "Medication reviews and pharmacist advice." },
       { label: "Compounding", href: "/pharmacy-services", desc: "Customized medications and formulations." },
       { label: "Travel Health", href: "/pharmacy-services", desc: "Travel consults and immunizations." },
-      { label: "Free Local Delivery", href: "/pharmacy-services", desc: "Convenient prescription delivery across Calgary." },
+      { label: "Prescription Delivery", href: "/pharmacy-services", desc: "Convenient prescription delivery service available." },
       {
         label: "Transfer Prescription",
         href: "#",
@@ -81,10 +86,9 @@ export default function Navbar() {
 
   const topLinkClass = ({ isActive }) =>
     `flex items-center gap-2 px-3 py-2 rounded-xl font-semibold transition-all duration-300
-    ${
-      isActive
-        ? "text-brand-primary bg-gradient-to-r from-yellow-100 via-green-50 to-sky-50"
-        : "text-text-secondary hover:text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50"
+    ${isActive
+      ? "text-brand-primary bg-gradient-to-r from-yellow-100 via-green-50 to-sky-50"
+      : "text-text-secondary hover:text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50"
     }`;
 
   const submenuCardClass =
@@ -167,10 +171,9 @@ export default function Navbar() {
         onClick={closeMenu}
         className={({ isActive }) =>
           `flex items-center gap-2 px-4 py-3 rounded-xl text-lg font-semibold transition-all duration-300
-          ${
-            isActive
-              ? "text-brand-primary bg-gradient-to-r from-yellow-100 via-green-50 to-sky-50 border border-yellow-200"
-              : "text-text-primary bg-white border border-brand-gray-light hover:text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50"
+          ${isActive
+            ? "text-brand-primary bg-gradient-to-r from-yellow-100 via-green-50 to-sky-50 border border-yellow-200"
+            : "text-text-primary bg-white border border-brand-gray-light hover:text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50"
           }`
         }
         end
@@ -183,11 +186,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-white border-b transition-all duration-300 ${
-        scrolling
+      className={`fixed top-0 left-0 w-full z-50 bg-white border-b transition-all duration-300 ${scrolling
           ? "border-brand-gray-light shadow-md"
           : "border-brand-accent-light shadow-sm"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 md:h-28 flex justify-between items-center">
         <Link to="/#home" onClick={closeMenu} className="flex items-center">
