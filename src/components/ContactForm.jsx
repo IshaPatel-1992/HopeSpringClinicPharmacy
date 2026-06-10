@@ -12,14 +12,21 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa";
 
+import { SITE_INFO } from "../data/siteInfo";
+
 const directionUrl =
-  "https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+1N6";
+  "https://www.google.com/maps/dir//151+Skyview+Bay+NE+%232130,+Calgary,+AB+T3N+2K3";
+
+const mapUrl =
+  "https://www.google.com/maps?q=151%20Skyview%20Bay%20NE%20%232130,%20Calgary,%20AB%20T3N%202K3&output=embed";
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export default function ContactForm() {
+  const { clinic, pharmacy, address } = SITE_INFO;
+
   return (
     <main
       id="contactus"
@@ -39,7 +46,7 @@ export default function ContactForm() {
             className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Contact HopeSpring Medical Clinic & Pharmacy
+            Contact {clinic.name} & {pharmacy.name}
           </h1>
 
           <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
@@ -49,7 +56,7 @@ export default function ContactForm() {
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
             <a
-              href="tel:+15875342506"
+              href={`tel:${clinic.phoneLink}`}
               className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)] hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
             >
               <FaPhoneAlt />
@@ -57,7 +64,7 @@ export default function ContactForm() {
             </a>
 
             <a
-              href="tel:+15875342502"
+              href={`tel:${pharmacy.phoneLink}`}
               className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-yellow-200 text-brand-primary shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
             >
               <FaPrescriptionBottleAlt />
@@ -82,7 +89,8 @@ export default function ContactForm() {
           <div className="grid lg:grid-cols-3 gap-6">
             <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
               <InfoCard icon={<FaMapMarkerAlt />} title="Our Address">
-                <p>151 Skyview Bay NE #2130, Calgary, AB T3N 1N6</p>
+                <p>{address.full}</p>
+
                 <p className="mt-2 text-sm text-text-muted">
                   Parking available • Wheelchair accessible
                 </p>
@@ -99,15 +107,26 @@ export default function ContactForm() {
               </InfoCard>
 
               <InfoCard icon={<FaClock />} title="Hours of Operation">
-                <div className="space-y-4">
+                <div className="space-y-5">
                   <div>
                     <div className="font-semibold text-text-primary">
-                      Clinic & Pharmacy Hours
+                      Medical Clinic
                     </div>
                     <ul className="mt-2 space-y-1 text-sm">
-                      <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
-                      <li>Saturday: 10:00 AM – 2:00 PM</li>
-                      <li>Sunday & Holidays: Closed</li>
+                      <li>{clinic.hours.weekdays}</li>
+                      <li>{clinic.hours.saturday}</li>
+                      <li>{clinic.hours.sunday}</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="font-semibold text-text-primary">
+                      Pharmacy
+                    </div>
+                    <ul className="mt-2 space-y-1 text-sm">
+                      <li>{pharmacy.hours.weekdays}</li>
+                      <li>{pharmacy.hours.saturday}</li>
+                      <li>{pharmacy.hours.sunday}</li>
                     </ul>
                   </div>
                 </div>
@@ -127,10 +146,10 @@ export default function ContactForm() {
                 <div className="grid md:grid-cols-2 gap-5">
                   <ContactCard
                     icon={<FaUserMd />}
-                    title="Medical Clinic"
-                    phone="587-534-2506"
-                    tel="+15875342506"
-                    email="info@hopespringmedical.ca"
+                    title={clinic.name}
+                    phone={clinic.phone}
+                    tel={clinic.phoneLink}
+                    email={clinic.email}
                     description="For appointments, walk-in availability, medical forms, and general clinic inquiries."
                     link="/medical-services"
                     linkText="View Clinic Services"
@@ -138,10 +157,10 @@ export default function ContactForm() {
 
                   <ContactCard
                     icon={<FaPrescriptionBottleAlt />}
-                    title="Pharmacy"
-                    phone="587-534-2502"
-                    tel="+15875342502"
-                    email="hsskypharmacy@gmail.com"
+                    title={pharmacy.name}
+                    phone={pharmacy.phone}
+                    tel={pharmacy.phoneLink}
+                    email={pharmacy.email}
                     description="For prescriptions, refills, vaccinations, delivery, medication packaging, and pharmacy service questions."
                     link="/pharmacy-services"
                     linkText="View Pharmacy Services"
@@ -156,6 +175,7 @@ export default function ContactForm() {
                 >
                   Contact Form
                 </h2>
+
                 <p className="mt-2 text-text-secondary">
                   Microsoft Form can be embedded here once finalized.
                 </p>
@@ -174,9 +194,8 @@ export default function ContactForm() {
                   >
                     Find Us on the Map
                   </h3>
-                  <p className="mt-2 text-text-secondary">
-                    151 Skyview Bay NE #2130, Calgary, AB T3N 1N6
-                  </p>
+
+                  <p className="mt-2 text-text-secondary">{address.full}</p>
                 </div>
 
                 <div className="h-[340px] md:h-[420px] w-full">
@@ -185,7 +204,7 @@ export default function ContactForm() {
                     className="w-full h-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=151%20Skyview%20Bay%20NE%20%232130,%20Calgary,%20AB%20T3N%201N6&output=embed"
+                    src={mapUrl}
                   />
                 </div>
               </section>

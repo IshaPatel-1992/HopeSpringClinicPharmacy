@@ -16,6 +16,7 @@ import {
 import { FaStethoscope, FaCapsules } from "react-icons/fa6";
 import { MdMedicalServices } from "react-icons/md";
 
+import { SITE_INFO } from "../data/siteInfo";
 import pharmacistLicensePdf from "../assets/documents/shraddha-agarwal-pharmacy-license-hopespringpharmacy.pdf";
 
 import valueImg1 from "../assets/About/shutterstock_2310192627_Resize.png";
@@ -25,45 +26,6 @@ import valueImg3 from "../assets/About/shutterstock_2175114179.jpg";
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
-
-const team = [
-  {
-    name: "Dr. Segun",
-    credentials: "Family Physician",
-    role: "Doctor",
-    type: "doctor",
-    bio: "Providing compassionate medical care with a focus on patient wellness, prevention, and ongoing family healthcare support.",
-    focus: "Family medicine, preventive care, and patient wellness.",
-    approach: "Clear communication, respectful care, and coordinated follow-up.",
-  },
-  {
-    name: "Dr. Yemisi",
-    credentials: "Family Physician",
-    role: "Doctor",
-    type: "doctor",
-    bio: "Supporting patients and families with professional, patient-centered medical care in a welcoming clinic environment.",
-    focus: "Patient-centered care, family health, and long-term wellness.",
-    approach: "Compassionate support and evidence-informed care.",
-  },
-  {
-    name: "Shraddha Agarwal",
-    credentials: "Pharmacist, ACP 13158",
-    role: "Proprietor & Licensed Pharmacist",
-    type: "pharmacist",
-    bio: "Shraddha Agarwal is the proprietor and licensed pharmacist at HopeSpring Pharmacy. She supports patients with safe medication use, prescription services, medication counselling, and personalized pharmacy care.",
-    licenses: [
-      "Proprietor: Shraddha Agarwal",
-      "Licensee: Shraddha Agarwal, ACP 13158",
-      "Pharmacy License Information Available",
-    ],
-    phone: "780-226-6365",
-    email: "hsskypharmacy@gmail.com",
-    address: "2130-151 Skyview Bay NE, Calgary, AB T3N 2K3",
-    licensePdf: pharmacistLicensePdf,
-    focus: "Medication counselling, prescription services, and pharmacy support.",
-    approach: "Safe, clear, and patient-focused pharmacy care.",
-  },
-];
 
 export default function AboutUs() {
   const teamRef = useRef(null);
@@ -123,7 +85,7 @@ export default function AboutUs() {
             </Link>
 
             <a
-              href="tel:+17802266365"
+              href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
               className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-brand-gray-light text-text-primary hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
             >
               <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 via-green-50 to-yellow-100 flex items-center justify-center text-brand-primary">
@@ -165,6 +127,54 @@ export default function AboutUs() {
                 </ul>
               </InfoCard>
 
+              <InfoCard icon={<FaUserMd />} title="Clinic Information">
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <div className="font-bold text-text-primary">
+                      {SITE_INFO.clinic.name}
+                    </div>
+                    <div className="text-text-secondary">
+                      Family Practice & Walk-In Care
+                    </div>
+                  </div>
+
+                  <p>
+                    <strong>Phone:</strong>{" "}
+                    <a
+                      href={`tel:${SITE_INFO.clinic.phoneLink}`}
+                      className="text-brand-primary font-semibold hover:underline"
+                    >
+                      {SITE_INFO.clinic.phone}
+                    </a>
+                  </p>
+
+                  <p>
+                    <strong>Email:</strong>{" "}
+                    <a
+                      href={`mailto:${SITE_INFO.clinic.email}`}
+                      className="text-brand-primary font-semibold hover:underline"
+                    >
+                      {SITE_INFO.clinic.email}
+                    </a>
+                  </p>
+
+                  <div>
+                    <strong>Clinic Hours:</strong>
+                    <ul className="mt-1 space-y-1">
+                      <li>{SITE_INFO.clinic.hours.weekdays}</li>
+                      <li>{SITE_INFO.clinic.hours.saturday}</li>
+                      <li>{SITE_INFO.clinic.hours.sunday}</li>
+                    </ul>
+                  </div>
+
+                  <p>
+                    <strong>Address:</strong>
+                    <br />
+                    {SITE_INFO.address.full}
+                  </p>
+                </div>
+              </InfoCard>
+
               <InfoCard icon={<FaIdBadge />} title="Pharmacy License Information">
                 <div className="space-y-4 text-sm">
                   <div className="flex items-center gap-4">
@@ -172,13 +182,13 @@ export default function AboutUs() {
 
                     <div>
                       <div className="font-bold text-text-primary">
-                        Shraddha Agarwal
+                        {SITE_INFO.pharmacist.name}
                       </div>
                       <div className="text-text-secondary">
-                        Proprietor & Licensee Pharmacist
+                        {SITE_INFO.pharmacist.designation}
                       </div>
                       <div className="text-text-muted">
-                        Alberta College of Pharmacy — ACP 13158
+                        Alberta College of Pharmacy — {SITE_INFO.pharmacist.license}
                       </div>
                     </div>
                   </div>
@@ -189,10 +199,10 @@ export default function AboutUs() {
                       <span>
                         <strong>Phone:</strong>{" "}
                         <a
-                          href="tel:+17802266365"
+                          href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
                           className="text-brand-primary font-semibold hover:underline"
                         >
-                          780-226-6365
+                          {SITE_INFO.pharmacist.phone}
                         </a>
                       </span>
                     </p>
@@ -202,10 +212,10 @@ export default function AboutUs() {
                       <span>
                         <strong>Email:</strong>{" "}
                         <a
-                          href="mailto:hsskypharmacy@gmail.com"
+                          href={`mailto:${SITE_INFO.pharmacist.email}`}
                           className="text-brand-primary font-semibold hover:underline"
                         >
-                          hsskypharmacy@gmail.com
+                          {SITE_INFO.pharmacist.email}
                         </a>
                       </span>
                     </p>
@@ -213,8 +223,8 @@ export default function AboutUs() {
                     <p className="flex items-start gap-2">
                       <FaMapMarkerAlt className="mt-1 text-brand-primary" />
                       <span>
-                        <strong>Business Address:</strong> 2130-151 Skyview Bay
-                        NE, Calgary, AB T3N 2K3
+                        <strong>Business Address:</strong>{" "}
+                        {SITE_INFO.address.full}
                       </span>
                     </p>
                   </div>
@@ -295,8 +305,18 @@ export default function AboutUs() {
                 </div>
 
                 <div className="mt-6 space-y-6">
-                  {team.map((member, idx) => (
-                    <TeamCard key={idx} member={member} reverse={idx % 2 === 1} />
+                  {SITE_INFO.team.map((member, idx) => (
+                    <TeamCard
+                      key={member.id}
+                      member={{
+                        ...member,
+                        licensePdf:
+                          member.type === "pharmacist"
+                            ? pharmacistLicensePdf
+                            : member.licensePdf,
+                      }}
+                      reverse={idx % 2 === 1}
+                    />
                   ))}
                 </div>
               </section>
@@ -427,7 +447,7 @@ function TeamCard({ member, reverse }) {
             </div>
           </div>
 
-          {member.licenses && (
+          { /* member.licenses && (
             <div className="mt-5 rounded-xl border border-yellow-200 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 p-4">
               <div className="text-sm font-semibold text-text-primary">
                 Professional Licensing
@@ -458,7 +478,7 @@ function TeamCard({ member, reverse }) {
                 </a>
               )}
             </div>
-          )}
+          ) */ }
 
           {(member.phone || member.email || member.address) && (
             <div className="mt-5 grid md:grid-cols-3 gap-3 text-sm">

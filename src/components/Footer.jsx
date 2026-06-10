@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/HopeSpringLogo.png";
 import medicalBg from "../assets/background/shutterstock_2430491931.jpg";
+import { SITE_INFO } from "../data/siteInfo";
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -10,7 +12,6 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaClock,
   FaPrescriptionBottleAlt,
   FaFilePrescription,
 } from "react-icons/fa";
@@ -43,7 +44,7 @@ export default function Footer() {
         <img
           src={medicalBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.14] grayscale-[10%] contrast-[1.08]"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.12] grayscale-[10%] contrast-[1.08]"
           style={{
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%)",
@@ -51,86 +52,91 @@ export default function Footer() {
               "linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%)",
           }}
         />
-        <div className="absolute inset-0 bg-white/35" />
+        <div className="absolute inset-0 bg-white/40" />
       </div>
 
       <div className="relative h-1.5 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400" />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-14 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div className="bg-white/80 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+      {/* MAIN FOOTER - OPTION 1 */}
+      <div className="relative max-w-7xl mx-auto px-6 pt-14 pb-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* CONTACT / BRAND */}
+        <div className="lg:col-span-5 bg-white/85 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
           <img
             src={logo}
             alt="HopeSpring Medical Clinic & Pharmacy Logo"
             className="h-16 w-auto object-contain"
           />
 
-          <div className="mt-5 space-y-4 text-sm text-text-secondary">
-            <div className="rounded-xl bg-brand-primary-light/40 p-3 border border-brand-gray-light">
-              <div className="font-semibold text-text-primary mb-2">
-                Medical Clinic
+          <p className="mt-4 text-sm text-text-secondary leading-relaxed">
+            Comprehensive family medicine, walk-in care, pharmacy services,
+            prescription support, vaccinations, and preventive healthcare for
+            individuals and families in Calgary.
+          </p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-xl bg-brand-primary-light/40 p-4 border border-brand-gray-light">
+              <div className="font-semibold text-text-primary mb-3">
+                {SITE_INFO.clinic.name}
               </div>
 
               <a
-                href="tel:5875342506"
-                className="flex items-center gap-3 hover:text-brand-primary transition"
+                href={`tel:${SITE_INFO.clinic.phoneLink}`}
+                className="flex items-center gap-3 text-sm text-text-secondary hover:text-brand-primary transition"
               >
                 <span className="footer-icon">
                   <FaPhoneAlt />
                 </span>
-                (587) 534-2506
+                {SITE_INFO.clinic.phone}
               </a>
 
               <a
-                href="mailto:info@hopespringmedical.ca"
-                className="flex items-center gap-3 mt-2 hover:text-brand-primary transition"
+                href={`mailto:${SITE_INFO.clinic.email}`}
+                className="flex items-center gap-3 text-sm text-text-secondary mt-3 hover:text-brand-primary transition break-all"
               >
                 <span className="footer-icon">
                   <FaEnvelope />
                 </span>
-                info@hopespringmedical.ca
+                {SITE_INFO.clinic.email}
               </a>
             </div>
 
-            <div className="rounded-xl bg-brand-accent-light/40 p-3 border border-brand-gray-light">
-              <div className="font-semibold text-text-primary mb-2">
-                Pharmacy
+            <div className="rounded-xl bg-brand-accent-light/40 p-4 border border-brand-gray-light">
+              <div className="font-semibold text-text-primary mb-3">
+                {SITE_INFO.pharmacy.name}
               </div>
 
               <a
-                href="tel:5875342502"
-                className="flex items-center gap-3 hover:text-brand-primary transition"
+                href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
+                className="flex items-center gap-3 text-sm text-text-secondary hover:text-brand-primary transition"
               >
                 <span className="footer-icon">
                   <FaPhoneAlt />
                 </span>
-                (587) 534-2502
+                {SITE_INFO.pharmacy.phone}
               </a>
 
               <a
-                href="mailto:hsskypharmacy@gmail.com"
-                className="flex items-center gap-3 mt-2 hover:text-brand-primary transition"
+                href={`mailto:${SITE_INFO.pharmacy.email}`}
+                className="flex items-center gap-3 text-sm text-text-secondary mt-3 hover:text-brand-primary transition break-all"
               >
                 <span className="footer-icon">
                   <FaEnvelope />
                 </span>
-                hsskypharmacy@gmail.com
+                {SITE_INFO.pharmacy.email}
               </a>
             </div>
+          </div>
 
-            <div className="flex items-start gap-3">
-              <span className="footer-icon mt-0.5">
-                <FaMapMarkerAlt />
-              </span>
-              <span>
-                151 Skyview Bay NE #2130,
-                <br />
-                Calgary, AB T3N 2K3
-              </span>
-            </div>
+          <div className="mt-5 flex items-start gap-3 text-sm text-text-secondary">
+            <span className="footer-icon mt-0.5">
+              <FaMapMarkerAlt />
+            </span>
+            <span>{SITE_INFO.address.full}</span>
           </div>
         </div>
 
-        <div className="bg-white/80 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+        {/* QUICK LINKS */}
+        <div className="lg:col-span-3 bg-white/85 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
           <h4
             className="font-bold text-text-primary mb-5 text-lg"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -138,7 +144,7 @@ export default function Footer() {
             Quick Links
           </h4>
 
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-4 text-sm">
             {quickLinks.map((item) => (
               <li key={item.to}>
                 <Link
@@ -148,6 +154,7 @@ export default function Footer() {
                   {item.icon && (
                     <span className="text-brand-primary">{item.icon}</span>
                   )}
+
                   <span className="relative">
                     {item.label}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400 transition-all duration-300 group-hover:w-full" />
@@ -155,25 +162,26 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-
-            <li className="pt-2">
-              <div className="rounded-2xl border border-yellow-200 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 p-4">
-                <div className="flex items-center gap-2 text-brand-primary font-semibold">
-                  <FaFilePrescription />
-                  Transfer Prescription
-                </div>
-                <p className="mt-1 text-xs text-text-secondary">
-                  Microsoft Form integration coming soon.
-                </p>
-                <span className="mt-2 inline-flex px-2 py-0.5 rounded-full text-[10px] font-semibold bg-white border border-yellow-200 text-brand-primary">
-                  Coming Soon
-                </span>
-              </div>
-            </li>
           </ul>
+
+          <div className="mt-6 rounded-xl border border-yellow-200 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 p-4">
+            <div className="flex items-center gap-2 text-brand-primary font-semibold">
+              <FaFilePrescription />
+              Transfer Prescription
+            </div>
+
+            <p className="mt-2 text-xs text-text-secondary">
+              Transfer your prescription easily to HopeSpring Pharmacy.
+            </p>
+
+            <span className="mt-3 inline-flex px-2 py-0.5 rounded-full text-[10px] font-semibold bg-white border border-yellow-200 text-brand-primary">
+              Coming Soon
+            </span>
+          </div>
         </div>
 
-        <div className="bg-white/80 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
+        {/* HOURS */}
+        <div className="lg:col-span-4 bg-white/85 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
           <h4
             className="font-bold text-text-primary mb-5 text-lg"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -181,48 +189,71 @@ export default function Footer() {
             Hours
           </h4>
 
-          <div className="flex items-start gap-3 text-sm text-text-secondary">
-            <span className="footer-icon mt-1">
-              <FaClock />
-            </span>
-
-            <div className="space-y-2 w-full">
-              <div className="flex justify-between border-b border-gray-100 pb-1">
-                <span>Monday – Friday</span>
-                <span className="font-medium">9:00 AM – 6:00 PM</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 text-sm text-text-secondary">
+            <div>
+              <div className="flex items-center gap-2 font-semibold text-text-primary mb-3">
+                <MdMedicalServices className="text-brand-primary" />
+                Clinic Hours
               </div>
 
-              <div className="flex justify-between border-b border-gray-100 pb-1">
-                <span>Saturday</span>
-                <span className="font-medium">10:00 AM – 2:00 PM</span>
-              </div>
-
-              <div className="flex justify-between">
-                <span>Sundays & Holidays</span>
-                <span className="font-medium text-red-600">Closed</span>
+              <div className="space-y-2">
+                <div className="border-b border-gray-100 pb-1">
+                  {SITE_INFO.clinic.hours.weekdays}
+                </div>
+                <div className="border-b border-gray-100 pb-1">
+                  {SITE_INFO.clinic.hours.saturday}
+                </div>
+                <div className="text-red-600 font-medium">
+                  {SITE_INFO.clinic.hours.sunday}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mt-5 rounded-2xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
-            <div className="font-semibold text-text-primary">
-              HopeSpring Medical Clinic & Pharmacy
+            <div className="h-px bg-gradient-to-r from-yellow-200 via-green-300 to-sky-200 md:hidden lg:block" />
+
+            <div>
+              <div className="flex items-center gap-2 font-semibold text-text-primary mb-3">
+                <FaPrescriptionBottleAlt className="text-brand-primary" />
+                Pharmacy Hours
+              </div>
+
+              <div className="space-y-2">
+                <div className="border-b border-gray-100 pb-1">
+                  {SITE_INFO.pharmacy.hours.weekdays}
+                </div>
+                <div className="border-b border-gray-100 pb-1">
+                  {SITE_INFO.pharmacy.hours.saturday}
+                </div>
+                <div className="text-red-600 font-medium">
+                  {SITE_INFO.pharmacy.hours.sunday}
+                </div>
+              </div>
             </div>
-            <p className="mt-1 text-sm text-text-secondary">
-              Family medicine, walk-in care, pharmacy services, prescription
-              support, vaccinations, and patient care services in one convenient
-              location.
-            </p>
           </div>
         </div>
+      </div>
 
-        <div className="bg-white/80 rounded-2xl border border-brand-gray-light p-6 shadow-sm">
-          <h4
-            className="font-bold text-text-primary mb-5 text-lg"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Follow Us
-          </h4>
+      {/* FULL WIDTH MAP */}
+      <div className="relative max-w-7xl mx-auto px-6 pb-8">
+        <div className="rounded-2xl overflow-hidden border border-brand-gray-light bg-white/85 shadow-sm">
+          <iframe
+            title="HopeSpring Location"
+            src="https://www.google.com/maps?q=151%20Skyview%20Bay%20NE%20%232130,%20Calgary,%20AB%20T3N%202K3&output=embed"
+            width="100%"
+            height="230"
+            loading="lazy"
+            className="border-0 block"
+            allowFullScreen=""
+          />
+        </div>
+      </div>
+
+      {/* BOTTOM BAR */}
+      <div className="relative border-t border-brand-gray-light bg-white/80">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-text-muted text-center md:text-left">
+            © {year} HopeSpring Medical Clinic & Pharmacy. All rights reserved.
+          </p>
 
           <div className="flex flex-wrap gap-3">
             {socials.map(({ Icon, label, url }) => (
@@ -232,35 +263,13 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="h-11 w-11 rounded-2xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100
-                text-brand-primary flex items-center justify-center border border-white
-                hover:shadow-md hover:-translate-y-0.5 hover:scale-105 transition"
+                className="h-10 w-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 text-brand-primary flex items-center justify-center border border-white hover:shadow-md hover:-translate-y-0.5 hover:scale-105 transition"
               >
-                <Icon size={15} />
+                <Icon size={14} />
               </a>
             ))}
           </div>
-
-          <div className="mt-6 rounded-2xl overflow-hidden border border-brand-gray-light bg-white shadow-sm">
-            <iframe
-              title="HopeSpring Location"
-              src="https://www.google.com/maps/embed?pb=YOUR_EMBED_LINK_HERE"
-              width="100%"
-              height="150"
-              loading="lazy"
-              className="border-0"
-              allowFullScreen=""
-            />
-          </div>
-
-          <p className="mt-3 text-xs text-text-muted">
-            Replace map embed link when final Google Maps listing is ready.
-          </p>
         </div>
-      </div>
-
-      <div className="relative text-center text-xs text-text-muted py-4 border-t border-brand-gray-light bg-white/75">
-        © {year} HopeSpring Medical Clinic & Pharmacy. All rights reserved.
       </div>
 
       <script
@@ -270,30 +279,30 @@ export default function Footer() {
             {
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
-              name: "HopeSpring Medical Clinic",
-              telephone: "+1-587-534-2506",
-              email: "info@hopespringmedical.ca",
+              name: SITE_INFO.clinic.name,
+              telephone: `+1-${SITE_INFO.clinic.phone}`,
+              email: SITE_INFO.clinic.email,
               url: "https://hopespringmedical.ca",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "151 Skyview Bay NE #2130",
+                streetAddress: SITE_INFO.address.full,
                 addressLocality: "Calgary",
                 addressRegion: "AB",
                 postalCode: "T3N 2K3",
                 addressCountry: "CA",
               },
-              openingHours: "Mo-Fr 09:00-18:00, Sa 10:00-14:00",
+              openingHours: "Mo-Fr 09:00-17:00",
             },
             {
               "@context": "https://schema.org",
               "@type": "Pharmacy",
-              name: "HopeSpring Pharmacy",
-              telephone: "+1-587-534-2502",
-              email: "hsskypharmacy@gmail.com",
+              name: SITE_INFO.pharmacy.name,
+              telephone: `+1-${SITE_INFO.pharmacy.phone}`,
+              email: SITE_INFO.pharmacy.email,
               url: "https://hopespringmedical.ca/pharmacy-services",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "151 Skyview Bay NE #2130",
+                streetAddress: SITE_INFO.address.full,
                 addressLocality: "Calgary",
                 addressRegion: "AB",
                 postalCode: "T3N 2K3",
