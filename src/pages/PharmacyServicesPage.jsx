@@ -22,6 +22,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 //import pharmacistPhoto from "../assets/pharmacy/pharmacist-shraddha.jpg";
 import pharmacyLicensePdf from "../assets/documents/shraddha-agarwal-pharmacy-license-hopespringpharmacy.pdf";
@@ -173,234 +174,241 @@ export default function PharmacyServicesPage() {
   };
 
   return (
-    <main
-      id="pharmacy"
-      className="min-h-screen bg-gradient-to-br from-white via-brand-primary-light/25 to-brand-accent-light/35 text-text-primary overflow-hidden"
-    >
-      <section className="relative pt-12 pb-12">
-        <div className="absolute -top-28 -right-28 w-80 h-80 bg-sky-100/70 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 -left-28 w-80 h-80 bg-yellow-100/80 rounded-full blur-3xl" />
+    <>
+      <SEO
+        title="Pharmacy Services in Calgary | HopeSpring Pharmacy"
+        description="HopeSpring Pharmacy in Calgary offers prescriptions, vaccinations, medication reviews, compounding, compliance packaging, travel health services, OAT support, and delivery options."
+        path="/pharmacy-services"
+      />
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
-            <FaPrescriptionBottleAlt className="text-lg" />
-            Pharmacy Services
-          </div>
+      <main
+        id="pharmacy"
+        className="min-h-screen bg-gradient-to-br from-white via-brand-primary-light/25 to-brand-accent-light/35 text-text-primary overflow-hidden"
+      >
+        <section className="relative pt-12 pb-12">
+          <div className="absolute -top-28 -right-28 w-80 h-80 bg-sky-100/70 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 -left-28 w-80 h-80 bg-yellow-100/80 rounded-full blur-3xl" />
 
-          <h1
-            className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight text-text-primary"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Pharmacy Care Made Simple
-          </h1>
+          <div className="relative max-w-7xl mx-auto px-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
+              <FaPrescriptionBottleAlt className="text-lg" />
+              Pharmacy Services
+            </div>
 
-          <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
-            From prescriptions and vaccinations to consultations, travel health,
-            medication packaging, and delivery support — our pharmacy team is
-            here to make everyday care easier.
-          </p>
+            <h1
+              className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight text-text-primary"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Pharmacy Care Made Simple
+            </h1>
 
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-center">
-            <div className="relative">
-              <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-brand-primary" />
-              <input
-                id="pharmacySearch"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search pharmacy services — vaccines, delivery, compounding..."
-                className="w-full rounded-2xl pl-12 pr-5 py-4 bg-white border border-brand-gray-light
+            <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
+              From prescriptions and vaccinations to consultations, travel health,
+              medication packaging, and delivery support — our pharmacy team is
+              here to make everyday care easier.
+            </p>
+
+            <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-center">
+              <div className="relative">
+                <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-brand-primary" />
+                <input
+                  id="pharmacySearch"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search pharmacy services — vaccines, delivery, compounding..."
+                  className="w-full rounded-2xl pl-12 pr-5 py-4 bg-white border border-brand-gray-light
                 text-text-primary placeholder:text-text-muted shadow-sm
                 focus:outline-none focus:ring-4 focus:ring-brand-primary-light/60 focus:border-brand-primary-light"
-              />
-            </div>
+                />
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/contactus"
-                onClick={scrollToTop}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/contactus"
+                  onClick={scrollToTop}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
                 bg-brand-primary text-white shadow-[0_8px_20px_rgba(0,64,44,0.20)]
                 hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-0.5 transition"
-              >
-                <FaNotesMedical />
-                Ask Pharmacist
-              </Link>
+                >
+                  <FaNotesMedical />
+                  Ask Pharmacist
+                </Link>
 
-              <button
-                type="button"
-                disabled
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold
                 bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-200
                 text-brand-primary shadow-sm cursor-not-allowed opacity-90"
-                title="Microsoft Form coming soon"
-              >
-                <FaFilePrescription />
-                Transfer Prescription
-                <span className="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-white border border-yellow-200">
-                  Soon
-                </span>
-              </button>
+                  title="Microsoft Form coming soon"
+                >
+                  <FaFilePrescription />
+                  Transfer Prescription
+                  <span className="ml-1 text-[10px] px-2 py-0.5 rounded-full bg-white border border-yellow-200">
+                    Soon
+                  </span>
+                </button>
+              </div>
             </div>
+
+            {hasQuery && !hasResults && (
+              <div className="mt-5 rounded-2xl bg-white border border-yellow-200 p-4 shadow-sm text-text-secondary">
+                <strong className="text-text-primary">
+                  No matching pharmacy service found.
+                </strong>{" "}
+                Showing all pharmacy services below.
+              </div>
+            )}
           </div>
+        </section>
 
-          {hasQuery && !hasResults && (
-            <div className="mt-5 rounded-2xl bg-white border border-yellow-200 p-4 shadow-sm text-text-secondary">
-              <strong className="text-text-primary">
-                No matching pharmacy service found.
-              </strong>{" "}
-              Showing all pharmacy services below.
-            </div>
-          )}
-        </div>
-      </section>
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-3 gap-6">
+              <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
+                <InfoCard icon={<FaClock />} title="Pharmacy Hours">
+                  <ul className="space-y-1 text-sm">
+                    <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
+                    <li>Saturday: 10:00 AM – 2:00 PM</li>
+                    <li>Sunday & Holidays: Closed</li>
+                  </ul>
 
-      <section className="pb-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
-              <InfoCard icon={<FaClock />} title="Pharmacy Hours">
-                <ul className="space-y-1 text-sm">
-                  <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
-                  <li>Saturday: 10:00 AM – 2:00 PM</li>
-                  <li>Sunday & Holidays: Closed</li>
-                </ul>
-
-                <div className="mt-4 rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
-                  <div className="font-semibold text-text-primary">
-                    Need medication support?
-                  </div>
-                  <p className="text-sm text-text-secondary mt-1">
-                    Call ahead for availability, vaccine eligibility, refill
-                    support, or delivery questions.
-                  </p>
-                </div>
-              </InfoCard>
-
-              <InfoCard icon={<FaTruck />} title="Convenience">
-                <ul className="space-y-2 text-sm">
-                  <li>✓ Local prescription delivery options</li>
-                  <li>✓ Medication packaging support</li>
-                  <li>✓ Prescription and refill guidance</li>
-                  <li>✓ Friendly pharmacy team</li>
-                </ul>
-              </InfoCard>
-
-              <InfoCard icon={<FaQuestionCircle />} title="Frequently Asked">
-                <div className="space-y-3 text-sm">
-                  <div>
+                  <div className="mt-4 rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4">
                     <div className="font-semibold text-text-primary">
-                      Can I transfer my prescription?
+                      Need medication support?
                     </div>
-                    <p>
-                      Yes — online transfer form is coming soon. For now, please
-                      contact us directly.
+                    <p className="text-sm text-text-secondary mt-1">
+                      Call ahead for availability, vaccine eligibility, refill
+                      support, or delivery questions.
                     </p>
                   </div>
-                  <div>
-                    <div className="font-semibold text-text-primary">
-                      Do you offer vaccines?
+                </InfoCard>
+
+                <InfoCard icon={<FaTruck />} title="Convenience">
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Local prescription delivery options</li>
+                    <li>✓ Medication packaging support</li>
+                    <li>✓ Prescription and refill guidance</li>
+                    <li>✓ Friendly pharmacy team</li>
+                  </ul>
+                </InfoCard>
+
+                <InfoCard icon={<FaQuestionCircle />} title="Frequently Asked">
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="font-semibold text-text-primary">
+                        Can I transfer my prescription?
+                      </div>
+                      <p>
+                        Yes — online transfer form is coming soon. For now, please
+                        contact us directly.
+                      </p>
                     </div>
-                    <p>
-                      Yes, select vaccinations may be available based on
-                      eligibility and supply.
-                    </p>
+                    <div>
+                      <div className="font-semibold text-text-primary">
+                        Do you offer vaccines?
+                      </div>
+                      <p>
+                        Yes, select vaccinations may be available based on
+                        eligibility and supply.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </InfoCard>
+                </InfoCard>
 
-              <InfoCard icon={<FaCheckCircle />} title="Why Choose HopeSpring?">
-                <ul className="space-y-2 text-sm">
-                  <li>✓ Clinic and pharmacy in one place</li>
-                  <li>✓ Personalized medication support</li>
-                  <li>✓ Convenient access to care</li>
-                  <li>✓ Compassionate, community-focused service</li>
-                </ul>
-              </InfoCard>
+                <InfoCard icon={<FaCheckCircle />} title="Why Choose HopeSpring?">
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Clinic and pharmacy in one place</li>
+                    <li>✓ Personalized medication support</li>
+                    <li>✓ Convenient access to care</li>
+                    <li>✓ Compassionate, community-focused service</li>
+                  </ul>
+                </InfoCard>
 
-              <InfoCard icon={<FaIdBadge />} title="Pharmacist & License Information">
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-center gap-4">
-                    {/*<img
+                <InfoCard icon={<FaIdBadge />} title="Pharmacist & License Information">
+                  <div className="space-y-4 text-sm">
+                    <div className="flex items-center gap-4">
+                      {/*<img
                       src={pharmacistPhoto}
                       alt="Shraddha Agarwal Pharmacist"
                       className="w-20 h-20 rounded-2xl object-cover border border-brand-gray-light shadow-sm"
                     />*/}
 
-                    <div
-  className="w-20 h-20 rounded-2xl flex items-center justify-center
+                      <div
+                        className="w-20 h-20 rounded-2xl flex items-center justify-center
   bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100
   border border-brand-gray-light shadow-sm"
->
-  <FaUserMd className="text-4xl text-brand-primary" />
-</div>
+                      >
+                        <FaUserMd className="text-4xl text-brand-primary" />
+                      </div>
 
-                    <div>
-                      <div className="font-bold text-text-primary">
-                        Shraddha Agarwal
+                      <div>
+                        <div className="font-bold text-text-primary">
+                          Shraddha Agarwal
+                        </div>
+                        <div className="text-text-secondary">
+                          Proprietor & Licensee
+                        </div>
+                        <div className="text-text-muted">ACP 13158</div>
                       </div>
-                      <div className="text-text-secondary">
-                        Proprietor & Licensee
-                      </div>
-                      <div className="text-text-muted">ACP 13158</div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <p className="flex items-start gap-2">
-                      <FaPhoneAlt className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Phone:</strong>{" "}
-                        <a
-                          href="tel:+1587-534-2502"
-                          className="text-brand-primary font-semibold hover:underline"
-                        >
-                          587-534-2502
-                        </a>
-                      </span>
-                    </p>
+                    <div className="space-y-2">
+                      <p className="flex items-start gap-2">
+                        <FaPhoneAlt className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Phone:</strong>{" "}
+                          <a
+                            href="tel:+1587-534-2502"
+                            className="text-brand-primary font-semibold hover:underline"
+                          >
+                            587-534-2502
+                          </a>
+                        </span>
+                      </p>
 
-                    <p className="flex items-start gap-2">
-                      <FaEnvelope className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Email:</strong>{" "}
-                        <a
-                          href="mailto:hsskypharmacy@gmail.com"
-                          className="text-brand-primary font-semibold hover:underline"
-                        >
-                          hsskypharmacy@gmail.com
-                        </a>
-                      </span>
-                    </p>
+                      <p className="flex items-start gap-2">
+                        <FaEnvelope className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Email:</strong>{" "}
+                          <a
+                            href="mailto:hsskypharmacy@gmail.com"
+                            className="text-brand-primary font-semibold hover:underline"
+                          >
+                            hsskypharmacy@gmail.com
+                          </a>
+                        </span>
+                      </p>
 
-                    <p className="flex items-start gap-2">
-                      <FaMapMarkerAlt className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Business Address:</strong> 2130-151 Skyview Bay
-                        NE, Calgary, AB T3N 2K3
-                      </span>
-                    </p>
-                  </div>
+                      <p className="flex items-start gap-2">
+                        <FaMapMarkerAlt className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Business Address:</strong> 2130-151 Skyview Bay
+                          NE, Calgary, AB T3N 2K3
+                        </span>
+                      </p>
+                    </div>
 
-                  <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
-                    The licensee is required to provide, on request of a
-                    patient, the name and practice permit number of any
-                    regulated member who provides service to the patient or
-                    engages in the practice of pharmacy with respect to a
-                    patient.
-                  </div>
+                    <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
+                      The licensee is required to provide, on request of a
+                      patient, the name and practice permit number of any
+                      regulated member who provides service to the patient or
+                      engages in the practice of pharmacy with respect to a
+                      patient.
+                    </div>
 
-                  <div className="space-y-2">
-                    <a
-                      href={pharmacyLicensePdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
-                    >
-                      <FaFilePdf />
-                      View Pharmacy License
-                    </a>
+                    <div className="space-y-2">
+                      <a
+                        href={pharmacyLicensePdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
+                      >
+                        <FaFilePdf />
+                        View Pharmacy License
+                      </a>
 
-                    {/* <a
+                      {/* <a
                       href={practicePermitPdf}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -409,102 +417,101 @@ export default function PharmacyServicesPage() {
                       <FaFilePdf />
                       View Practice Permit
                     </a>*/}
+                    </div>
                   </div>
-                </div>
-              </InfoCard>
-            </aside>
+                </InfoCard>
+              </aside>
 
-            <div className="lg:col-span-2 space-y-4">
-              {servicesToShow.map((s) => {
-                const isOpen = openTitle === s.title;
+              <div className="lg:col-span-2 space-y-4">
+                {servicesToShow.map((s) => {
+                  const isOpen = openTitle === s.title;
 
-                return (
-                  <div
-                    key={s.title}
-                    ref={(el) => {
-                      serviceRefs.current[s.title] = el;
-                    }}
-                    className={`group bg-white rounded-2xl border shadow-sm
+                  return (
+                    <div
+                      key={s.title}
+                      ref={(el) => {
+                        serviceRefs.current[s.title] = el;
+                      }}
+                      className={`group bg-white rounded-2xl border shadow-sm
                     hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden scroll-mt-36
-                    ${
-                      isOpen
-                        ? "border-brand-primary/40 ring-4 ring-brand-primary-light/30"
-                        : "border-brand-gray-light"
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => toggle(s.title)}
-                      className="w-full flex items-start justify-between gap-4 p-5 text-left"
-                    >
-                      <div className="flex gap-4">
-                        <div className="flex items-center justify-center min-w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 text-brand-primary text-xl group-hover:rotate-6 group-hover:scale-105 transition-all">
-                          {s.icon}
-                        </div>
-
-                        <div>
-                          <div className="text-lg font-semibold text-text-primary group-hover:text-brand-primary transition">
-                            {s.title}
-                          </div>
-                          <div className="text-sm text-text-secondary mt-1 leading-relaxed">
-                            {s.desc}
-                          </div>
-                        </div>
-                      </div>
-
-                      <span
-                        className={`mt-1 inline-flex h-9 min-w-9 items-center justify-center rounded-full border transition
-                        ${
-                          isOpen
-                            ? "bg-brand-primary text-white border-brand-primary"
-                            : "bg-white text-brand-primary border-brand-gray-light"
+                    ${isOpen
+                          ? "border-brand-primary/40 ring-4 ring-brand-primary-light/30"
+                          : "border-brand-gray-light"
                         }`}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => toggle(s.title)}
+                        className="w-full flex items-start justify-between gap-4 p-5 text-left"
                       >
-                        {isOpen ? "–" : "+"}
-                      </span>
-                    </button>
+                        <div className="flex gap-4">
+                          <div className="flex items-center justify-center min-w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 text-brand-primary text-xl group-hover:rotate-6 group-hover:scale-105 transition-all">
+                            {s.icon}
+                          </div>
 
-                    {isOpen && (
-                      <div className="px-5 pb-5">
-                        <div className="h-px bg-gradient-to-r from-yellow-200 via-green-300 to-sky-200 mb-4" />
-
-                        <div className="text-text-secondary leading-relaxed">
-                          {s.details}
+                          <div>
+                            <div className="text-lg font-semibold text-text-primary group-hover:text-brand-primary transition">
+                              {s.title}
+                            </div>
+                            <div className="text-sm text-text-secondary mt-1 leading-relaxed">
+                              {s.desc}
+                            </div>
+                          </div>
                         </div>
 
-                        <div className="mt-5 flex flex-wrap gap-3">
-                          <Link
-                            to="/contactus"
-                            onClick={scrollToTop}
-                            className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
-                            bg-brand-primary text-white hover:bg-brand-primary-dark transition"
-                          >
-                            Ask about this service
-                          </Link>
+                        <span
+                          className={`mt-1 inline-flex h-9 min-w-9 items-center justify-center rounded-full border transition
+                        ${isOpen
+                              ? "bg-brand-primary text-white border-brand-primary"
+                              : "bg-white text-brand-primary border-brand-gray-light"
+                            }`}
+                        >
+                          {isOpen ? "–" : "+"}
+                        </span>
+                      </button>
 
-                          <Link
-                            to="/contactus"
-                            onClick={scrollToTop}
-                            className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
+                      {isOpen && (
+                        <div className="px-5 pb-5">
+                          <div className="h-px bg-gradient-to-r from-yellow-200 via-green-300 to-sky-200 mb-4" />
+
+                          <div className="text-text-secondary leading-relaxed">
+                            {s.details}
+                          </div>
+
+                          <div className="mt-5 flex flex-wrap gap-3">
+                            <Link
+                              to="/contactus"
+                              onClick={scrollToTop}
+                              className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
+                            bg-brand-primary text-white hover:bg-brand-primary-dark transition"
+                            >
+                              Ask about this service
+                            </Link>
+
+                            <Link
+                              to="/contactus"
+                              onClick={scrollToTop}
+                              className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold
                             bg-white border border-brand-accent/40 text-brand-primary
                             hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50
                             hover:border-yellow-200 transition"
-                          >
-                            Pharmacy hours & location
-                          </Link>
+                            >
+                              Pharmacy hours & location
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    <div className="h-1 w-0 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400 group-hover:w-full transition-all duration-300" />
-                  </div>
-                );
-              })}
+                      <div className="h-1 w-0 bg-gradient-to-r from-yellow-300 via-green-500 to-sky-400 group-hover:w-full transition-all duration-300" />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
 

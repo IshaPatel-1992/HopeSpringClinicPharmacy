@@ -17,6 +17,7 @@ import { FaStethoscope, FaCapsules } from "react-icons/fa6";
 import { MdMedicalServices } from "react-icons/md";
 
 import { SITE_INFO } from "../data/siteInfo";
+import SEO from "../components/SEO";
 import pharmacistLicensePdf from "../assets/documents/shraddha-agarwal-pharmacy-license-hopespringpharmacy.pdf";
 
 import valueImg1 from "../assets/About/shutterstock_2310192627_Resize.png";
@@ -35,296 +36,295 @@ export default function AboutUs() {
   };
 
   return (
-    <main
-      id="about"
-      className="min-h-screen scroll-mt-28 bg-gradient-to-br from-white via-brand-primary-light/25 to-brand-accent-light/35 text-text-primary overflow-hidden"
-    >
-      <section className="relative pt-12 pb-12">
-        <div className="absolute -top-28 -right-28 w-80 h-80 bg-sky-100/70 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 -left-28 w-80 h-80 bg-yellow-100/80 rounded-full blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
-            <MdMedicalServices />
-            About HopeSpring
-          </div>
+    <><SEO
+      title="About HopeSpring Medical Clinic & Pharmacy | Calgary"
+      description="Learn about HopeSpring Medical Clinic & Pharmacy in Calgary, offering compassionate clinic and pharmacy care in one convenient location."
+      path="/about" /><main
+        id="about"
+        className="min-h-screen scroll-mt-28 bg-gradient-to-br from-white via-brand-primary-light/25 to-brand-accent-light/35 text-text-primary overflow-hidden"
+      >
+        <section className="relative pt-12 pb-12">
+          <div className="absolute -top-28 -right-28 w-80 h-80 bg-sky-100/70 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 -left-28 w-80 h-80 bg-yellow-100/80 rounded-full blur-3xl" />
 
-          <h1
-            className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Compassionate Clinic & Pharmacy Care — Together
-          </h1>
+          <div className="relative max-w-7xl mx-auto px-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-brand-gray-light text-brand-primary font-semibold shadow-sm">
+              <MdMedicalServices />
+              About HopeSpring
+            </div>
 
-          <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
-            HopeSpring brings medical care and pharmacy support into one
-            convenient setting, helping patients receive clear guidance,
-            coordinated service, and caring support at every step.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
-            <button
-              onClick={handleShowTeam}
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)] hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
+            <h1
+              className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              <span className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-                <FaUsers />
-              </span>
-              Meet Our Team
-            </button>
+              Compassionate Clinic & Pharmacy Care — Together
+            </h1>
 
-            <Link
-              to="/contactus"
-              onClick={scrollToTop}
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-yellow-200 text-brand-primary shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
-            >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 flex items-center justify-center">
-                <FaNotesMedical />
-              </span>
-              Contact Us
-            </Link>
+            <p className="mt-4 max-w-3xl text-text-secondary text-lg leading-relaxed">
+              HopeSpring brings medical care and pharmacy support into one
+              convenient setting, helping patients receive clear guidance,
+              coordinated service, and caring support at every step.
+            </p>
 
-            <a
-              href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
-              className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-brand-gray-light text-text-primary hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
-            >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 via-green-50 to-yellow-100 flex items-center justify-center text-brand-primary">
-                <FaPhoneAlt />
-              </span>
-              Call Pharmacy
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
-              <InfoCard icon={<FaHeartbeat />} title="Our Promise">
-                <ul className="space-y-2">
-                  <li>• Clear guidance and respectful care</li>
-                  <li>• Team-based support between clinic and pharmacy</li>
-                  <li>• Helpful communication and patient-first service</li>
-                </ul>
-              </InfoCard>
-
-              <InfoCard icon={<FaCheckCircle />} title="Why HopeSpring?">
-                <ul className="space-y-2 text-sm">
-                  <li>✓ Compassionate, patient-first approach</li>
-                  <li>✓ Clinic and pharmacy support in one place</li>
-                  <li>✓ Modern, welcoming environment</li>
-                  <li>✓ Convenient access to everyday care</li>
-                </ul>
-              </InfoCard>
-
-              <InfoCard icon={<FaShieldAlt />} title="Professional Standards">
-                <ul className="space-y-2 text-sm">
-                  <li>✓ Licensed healthcare professionals</li>
-                  <li>✓ Licensed Alberta pharmacist</li>
-                  <li>✓ Patient privacy and confidentiality</li>
-                  <li>✓ Safe medication support</li>
-                </ul>
-              </InfoCard>
-
-              <InfoCard icon={<FaUserMd />} title="Clinic Information">
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <div className="font-bold text-text-primary">
-                      {SITE_INFO.clinic.name}
-                    </div>
-                    <div className="text-text-secondary">
-                      Family Practice & Walk-In Care
-                    </div>
-                  </div>
-
-                  <p>
-                    <strong>Phone:</strong>{" "}
-                    <a
-                      href={`tel:${SITE_INFO.clinic.phoneLink}`}
-                      className="text-brand-primary font-semibold hover:underline"
-                    >
-                      {SITE_INFO.clinic.phone}
-                    </a>
-                  </p>
-
-                  <p>
-                    <strong>Email:</strong>{" "}
-                    <a
-                      href={`mailto:${SITE_INFO.clinic.email}`}
-                      className="text-brand-primary font-semibold hover:underline"
-                    >
-                      {SITE_INFO.clinic.email}
-                    </a>
-                  </p>
-
-                  <div>
-                    <strong>Clinic Hours:</strong>
-                    <ul className="mt-1 space-y-1">
-                      <li>{SITE_INFO.clinic.hours.weekdays}</li>
-                      <li>{SITE_INFO.clinic.hours.saturday}</li>
-                      <li>{SITE_INFO.clinic.hours.sunday}</li>
-                    </ul>
-                  </div>
-
-                  <p>
-                    <strong>Address:</strong>
-                    <br />
-                    {SITE_INFO.address.full}
-                  </p>
-                </div>
-              </InfoCard>
-
-              <InfoCard icon={<FaIdBadge />} title="Pharmacy License Information">
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-center gap-4">
-                    <AvatarIcon type="pharmacist" size="small" />
-
-                    <div>
-                      <div className="font-bold text-text-primary">
-                        {SITE_INFO.pharmacist.name}
-                      </div>
-                      <div className="text-text-secondary">
-                        {SITE_INFO.pharmacist.designation}
-                      </div>
-                      <div className="text-text-muted">
-                        Alberta College of Pharmacy — {SITE_INFO.pharmacist.license}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <p className="flex items-start gap-2">
-                      <FaPhoneAlt className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Phone:</strong>{" "}
-                        <a
-                          href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
-                          className="text-brand-primary font-semibold hover:underline"
-                        >
-                          {SITE_INFO.pharmacist.phone}
-                        </a>
-                      </span>
-                    </p>
-
-                    <p className="flex items-start gap-2">
-                      <FaEnvelope className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Email:</strong>{" "}
-                        <a
-                          href={`mailto:${SITE_INFO.pharmacist.email}`}
-                          className="text-brand-primary font-semibold hover:underline"
-                        >
-                          {SITE_INFO.pharmacist.email}
-                        </a>
-                      </span>
-                    </p>
-
-                    <p className="flex items-start gap-2">
-                      <FaMapMarkerAlt className="mt-1 text-brand-primary" />
-                      <span>
-                        <strong>Business Address:</strong>{" "}
-                        {SITE_INFO.address.full}
-                      </span>
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
-                    The licensee is required to provide, on request of a
-                    patient, the name and practice permit number of any
-                    regulated member who provides service to the patient or
-                    engages in the practice of pharmacy with respect to a
-                    patient.
-                  </div>
-
-                  <a
-                    href={pharmacistLicensePdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
-                  >
-                    <FaFilePdf />
-                    View Pharmacy License PDF
-                  </a>
-                </div>
-              </InfoCard>
-            </aside>
-
-            <div className="lg:col-span-2 space-y-6">
-              <div className="grid md:grid-cols-3 gap-5">
-                <ValueCard
-                  img={valueImg1}
-                  alt="Patient-centered medical care"
-                  icon={<FaStethoscope />}
-                  title="Patient-Centered Care"
-                  desc="Compassionate care with clarity, respect, and personal attention."
-                />
-
-                <ValueCard
-                  img={valueImg2}
-                  alt="Medical team collaboration"
-                  icon={<FaUsers />}
-                  title="Team-Based Approach"
-                  desc="Coordinated support between clinic providers and pharmacy care."
-                />
-
-                <ValueCard
-                  img={valueImg3}
-                  alt="Pharmacy and medication support"
-                  icon={<FaCapsules />}
-                  title="Integrated Pharmacy"
-                  desc="Prescription services, medication counselling, and delivery support."
-                />
-              </div>
-
-              <section
-                ref={teamRef}
-                className="bg-white rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm scroll-mt-36"
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
+              <button
+                onClick={handleShowTeam}
+                className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-brand-primary text-white shadow-[0_10px_25px_rgba(0,64,44,0.18)] hover:bg-brand-primary-dark hover:shadow-lg hover:-translate-y-1 transition"
               >
-                <div className="flex items-start justify-between gap-4 flex-wrap">
-                  <div>
-                    <h2
-                      className="text-2xl md:text-3xl font-extrabold text-text-primary"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      Meet Our Team
-                    </h2>
-                    <p className="mt-2 text-text-secondary">
-                      Our doctors and pharmacist work together to support
-                      patients with connected medical and pharmacy care.
-                    </p>
-                  </div>
+                <span className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+                  <FaUsers />
+                </span>
+                Meet Our Team
+              </button>
 
-                  <Link
-                    to="/contactus"
-                    onClick={scrollToTop}
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold bg-white border border-brand-accent/40 text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 hover:border-yellow-200 transition"
-                  >
-                    Contact the Team
-                  </Link>
-                </div>
+              <Link
+                to="/contactus"
+                onClick={scrollToTop}
+                className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-yellow-200 text-brand-primary shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-brand-accent transition"
+              >
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 via-green-100 to-sky-100 flex items-center justify-center">
+                  <FaNotesMedical />
+                </span>
+                Contact Us
+              </Link>
 
-                <div className="mt-6 space-y-6">
-                  {SITE_INFO.team.map((member, idx) => (
-                    <TeamCard
-                      key={member.id}
-                      member={{
-                        ...member,
-                        licensePdf:
-                          member.type === "pharmacist"
-                            ? pharmacistLicensePdf
-                            : member.licensePdf,
-                      }}
-                      reverse={idx % 2 === 1}
-                    />
-                  ))}
-                </div>
-              </section>
+              <a
+                href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
+                className="group inline-flex items-center justify-center gap-3 px-5 py-4 rounded-2xl font-semibold bg-white border border-brand-gray-light text-text-primary hover:border-brand-accent hover:shadow-md hover:-translate-y-1 transition"
+              >
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 via-green-50 to-yellow-100 flex items-center justify-center text-brand-primary">
+                  <FaPhoneAlt />
+                </span>
+                Call Pharmacy
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-3 gap-6">
+              <aside className="lg:col-span-1 lg:sticky lg:top-32 self-start space-y-5">
+                <InfoCard icon={<FaHeartbeat />} title="Our Promise">
+                  <ul className="space-y-2">
+                    <li>• Clear guidance and respectful care</li>
+                    <li>• Team-based support between clinic and pharmacy</li>
+                    <li>• Helpful communication and patient-first service</li>
+                  </ul>
+                </InfoCard>
+
+                <InfoCard icon={<FaCheckCircle />} title="Why HopeSpring?">
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Compassionate, patient-first approach</li>
+                    <li>✓ Clinic and pharmacy support in one place</li>
+                    <li>✓ Modern, welcoming environment</li>
+                    <li>✓ Convenient access to everyday care</li>
+                  </ul>
+                </InfoCard>
+
+                <InfoCard icon={<FaShieldAlt />} title="Professional Standards">
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Licensed healthcare professionals</li>
+                    <li>✓ Licensed Alberta pharmacist</li>
+                    <li>✓ Patient privacy and confidentiality</li>
+                    <li>✓ Safe medication support</li>
+                  </ul>
+                </InfoCard>
+
+                <InfoCard icon={<FaUserMd />} title="Clinic Information">
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="font-bold text-text-primary">
+                        {SITE_INFO.clinic.name}
+                      </div>
+                      <div className="text-text-secondary">
+                        Family Practice & Walk-In Care
+                      </div>
+                    </div>
+
+                    <p>
+                      <strong>Phone:</strong>{" "}
+                      <a
+                        href={`tel:${SITE_INFO.clinic.phoneLink}`}
+                        className="text-brand-primary font-semibold hover:underline"
+                      >
+                        {SITE_INFO.clinic.phone}
+                      </a>
+                    </p>
+
+                    <p>
+                      <strong>Email:</strong>{" "}
+                      <a
+                        href={`mailto:${SITE_INFO.clinic.email}`}
+                        className="text-brand-primary font-semibold hover:underline"
+                      >
+                        {SITE_INFO.clinic.email}
+                      </a>
+                    </p>
+
+                    <div>
+                      <strong>Clinic Hours:</strong>
+                      <ul className="mt-1 space-y-1">
+                        <li>{SITE_INFO.clinic.hours.weekdays}</li>
+                        <li>{SITE_INFO.clinic.hours.saturday}</li>
+                        <li>{SITE_INFO.clinic.hours.sunday}</li>
+                      </ul>
+                    </div>
+
+                    <p>
+                      <strong>Address:</strong>
+                      <br />
+                      {SITE_INFO.address.full}
+                    </p>
+                  </div>
+                </InfoCard>
+
+                <InfoCard icon={<FaIdBadge />} title="Pharmacy License Information">
+                  <div className="space-y-4 text-sm">
+                    <div className="flex items-center gap-4">
+                      <AvatarIcon type="pharmacist" size="small" />
+
+                      <div>
+                        <div className="font-bold text-text-primary">
+                          {SITE_INFO.pharmacist.name}
+                        </div>
+                        <div className="text-text-secondary">
+                          {SITE_INFO.pharmacist.designation}
+                        </div>
+                        <div className="text-text-muted">
+                          Alberta College of Pharmacy — {SITE_INFO.pharmacist.license}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="flex items-start gap-2">
+                        <FaPhoneAlt className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Phone:</strong>{" "}
+                          <a
+                            href={`tel:${SITE_INFO.pharmacy.phoneLink}`}
+                            className="text-brand-primary font-semibold hover:underline"
+                          >
+                            {SITE_INFO.pharmacist.phone}
+                          </a>
+                        </span>
+                      </p>
+
+                      <p className="flex items-start gap-2">
+                        <FaEnvelope className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Email:</strong>{" "}
+                          <a
+                            href={`mailto:${SITE_INFO.pharmacist.email}`}
+                            className="text-brand-primary font-semibold hover:underline"
+                          >
+                            {SITE_INFO.pharmacist.email}
+                          </a>
+                        </span>
+                      </p>
+
+                      <p className="flex items-start gap-2">
+                        <FaMapMarkerAlt className="mt-1 text-brand-primary" />
+                        <span>
+                          <strong>Business Address:</strong>{" "}
+                          {SITE_INFO.address.full}
+                        </span>
+                      </p>
+                    </div>
+
+                    <div className="rounded-xl bg-gradient-to-r from-yellow-50 via-green-50 to-sky-50 border border-yellow-100 p-4 text-text-secondary leading-relaxed">
+                      The licensee is required to provide, on request of a
+                      patient, the name and practice permit number of any
+                      regulated member who provides service to the patient or
+                      engages in the practice of pharmacy with respect to a
+                      patient.
+                    </div>
+
+                    <a
+                      href={pharmacistLicensePdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-semibold bg-brand-primary text-white hover:bg-brand-primary-dark transition"
+                    >
+                      <FaFilePdf />
+                      View Pharmacy License PDF
+                    </a>
+                  </div>
+                </InfoCard>
+              </aside>
+
+              <div className="lg:col-span-2 space-y-6">
+                <div className="grid md:grid-cols-3 gap-5">
+                  <ValueCard
+                    img={valueImg1}
+                    alt="Patient-centered medical care"
+                    icon={<FaStethoscope />}
+                    title="Patient-Centered Care"
+                    desc="Compassionate care with clarity, respect, and personal attention." />
+
+                  <ValueCard
+                    img={valueImg2}
+                    alt="Medical team collaboration"
+                    icon={<FaUsers />}
+                    title="Team-Based Approach"
+                    desc="Coordinated support between clinic providers and pharmacy care." />
+
+                  <ValueCard
+                    img={valueImg3}
+                    alt="Pharmacy and medication support"
+                    icon={<FaCapsules />}
+                    title="Integrated Pharmacy"
+                    desc="Prescription services, medication counselling, and delivery support." />
+                </div>
+
+                <section
+                  ref={teamRef}
+                  className="bg-white rounded-2xl border border-brand-gray-light p-6 md:p-8 shadow-sm scroll-mt-36"
+                >
+                  <div className="flex items-start justify-between gap-4 flex-wrap">
+                    <div>
+                      <h2
+                        className="text-2xl md:text-3xl font-extrabold text-text-primary"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                      >
+                        Meet Our Team
+                      </h2>
+                      <p className="mt-2 text-text-secondary">
+                        Our doctors and pharmacist work together to support
+                        patients with connected medical and pharmacy care.
+                      </p>
+                    </div>
+
+                    <Link
+                      to="/contactus"
+                      onClick={scrollToTop}
+                      className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold bg-white border border-brand-accent/40 text-brand-primary hover:bg-gradient-to-r hover:from-yellow-50 hover:via-green-50 hover:to-sky-50 hover:border-yellow-200 transition"
+                    >
+                      Contact the Team
+                    </Link>
+                  </div>
+
+                  <div className="mt-6 space-y-6">
+                    {SITE_INFO.team.map((member, idx) => (
+                      <TeamCard
+                        key={member.id}
+                        member={{
+                          ...member,
+                          licensePdf: member.type === "pharmacist"
+                            ? pharmacistLicensePdf
+                            : member.licensePdf,
+                        }}
+                        reverse={idx % 2 === 1} />
+                    ))}
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main></>
   );
 }
 
